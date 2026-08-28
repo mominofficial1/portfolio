@@ -83,7 +83,7 @@ function ProjectDetail() {
           <img
             src={project.image}
             alt={`${project.title} website preview`}
-            className="w-full rounded-xl object-cover"
+            className="w-full rounded-xl object-contain max-h-[640px] mx-auto"
           />
         </div>
       </Reveal>

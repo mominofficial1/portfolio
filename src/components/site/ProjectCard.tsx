@@ -12,7 +12,7 @@ export function ProjectCard({ project }: { project: Project }) {
           src={project.image}
           alt={`${project.title} website preview`}
           loading="lazy"
-          className="aspect-16/10 w-full object-cover object-top"
+          className="aspect-16/10 w-full object-cover object-center"
           whileHover={{ scale: 1.06 }}
           transition={{ type: "spring", stiffness: 200, damping: 22 }}
         />

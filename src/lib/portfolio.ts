@@ -27,7 +27,7 @@ export type Project = {
   statusTone: "live" | "dev";
   accent: "indigo" | "emerald";
   note?: string;
-  category: "shopify" | "web" | "growth";
+  category: "shopify" | "web" | "growth" | "app";
   image: string;
   year?: string;
   role?: string;
@@ -55,6 +55,39 @@ export type ServicePackage = {
 };
 
 export const PROJECTS: Project[] = [
+  {
+    slug: "fair-prices",
+    category: "app",
+    title: "Fair Prices (ন্যায্য মূল্য) — AI Market Price Monitor & Budgeting",
+    tag: "MOBILE & AI APP / CITIZEN TECH",
+    description:
+      "AI-powered citizen grocery budgeting and market price monitor app for Bangladesh with DAM Auto-Live government price benchmarks, Google Gemini AI budget optimization, and crowdsourced bazaar reporting.",
+    link: "https://github.com/mominofficial",
+    status: "LIVE / ACTIVE",
+    statusTone: "live",
+    accent: "emerald",
+    image: "/fair-prices.jpg",
+    year: "2026",
+    role: "Lead Full-Stack & AI Engineer",
+    overview:
+      "Fair Prices (ন্যায্য মূল্য) is an AI-powered smart grocery budgeting and citizen market surveillance platform designed for consumers in Bangladesh. It combats artificial market inflation and syndicate price manipulations by aggregating real-time daily benchmark prices from the Department of Agricultural Marketing (DAM Auto-Live) alongside crowdsourced reports from verified shoppers in local bazaars. Integrated with the Google Gemini API, the app automatically generates balanced, nutritional grocery lists tailored to specific family budgets and household sizes.",
+    stack: [
+      "React Native",
+      "Google Gemini API",
+      "Tailwind CSS",
+      "Node.js / Express",
+      "Firebase",
+      "DAM Auto-Live Sync",
+      "REST APIs",
+    ],
+    highlights: [
+      "DAM Auto-Live government fair price benchmarking vs local bazaar averages with daily shift alerts",
+      "Gemini AI Smart Budgeting engine generating optimized grocery lists by budget (৳500–৳10,000+), household size & nutrition",
+      "Citizen Market Monitoring Feed (নাগরিক ফোরাম) with photo proof, rate comparisons & overprice reporting",
+      "Gamified consumer reward system featuring 'Gold Reporter' verified badges, points & monthly budget tracking",
+      "Bilingual interface (Bengali & English) with seamless Dark and Light theme modes",
+    ],
+  },
   {
     slug: "chez-provence",
     category: "shopify",
@@ -243,7 +276,15 @@ export const REVIEWS = [
     initials: "TH",
   },
 ];
+
 export const COLLECTIONS = [
+  {
+    id: "app",
+    name: "Mobile & AI Applications",
+    kicker: "Cross-platform & AI solutions",
+    blurb:
+      "Intelligent mobile and web applications powered by Gemini AI, real-time market data sync, and citizen crowdsourcing.",
+  },
   {
     id: "shopify",
     name: "Shopify Storefronts",
@@ -268,6 +309,17 @@ export const COLLECTIONS = [
 ] as const;
 
 export const SERVICES: Service[] = [
+  {
+    title: "AI & Mobile Application Development",
+    body: "Cross-platform mobile and web applications with Google Gemini API integration, real-time data sync, and intuitive user interfaces.",
+    deliverables: [
+      "React Native & Mobile UI design",
+      "Google Gemini AI logic & prompt engineering",
+      "Real-time database & REST API integration",
+      "Bilingual localization & Dark/Light mode",
+      "Performance optimization & app deployment",
+    ],
+  },
   {
     title: "Shopify Store Setup & Theme Development",
     body: "Full store build or theme customization in custom Liquid — sections, metafields, product pages and checkout copy.",
@@ -310,17 +362,6 @@ export const SERVICES: Service[] = [
       "Semantic HTML & meta tags",
       "JSON-LD structured data",
       "Core Web Vitals action plan",
-    ],
-  },
-  {
-    title: "Paid Ads & Social Media",
-    body: "Meta, Google and TikTok ad setup, plus social media management, Canva creatives and CapCut video edits.",
-    deliverables: [
-      "Campaign strategy & targeting",
-      "Canva creative sets",
-      "CapCut video ad edits",
-      "Pixel & conversion setup",
-      "Weekly performance report",
     ],
   },
   {
@@ -375,10 +416,10 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     name: "Scale Package",
     kicker: "Full-stack",
     price: "$999+",
-    description: "End-to-end web app, dashboard or multi-service build with ongoing support.",
+    description: "End-to-end web app, mobile build or multi-service architecture with ongoing support.",
     features: [
       "React front-end + Node back-end",
-      "MongoDB database & auth",
+      "Gemini AI / MongoDB database & auth",
       "Admin dashboard & API design",
       "Ads / lead-gen add-on available",
       "Priority support for 30 days",
@@ -389,6 +430,10 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
 ];
 
 export const SKILL_GROUPS = [
+  {
+    title: "Mobile & AI",
+    items: ["React Native", "Google Gemini AI", "DAM Live Sync", "Cross-Platform UI", "REST APIs"],
+  },
   {
     title: "Shopify",
     items: ["Custom Liquid", "Custom Sections", "Theme Customization", "Product Page Builds", "Metafields"],

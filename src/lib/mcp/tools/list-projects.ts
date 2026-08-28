@@ -9,7 +9,7 @@ export default defineTool({
     "List MD Momin Ali's portfolio projects, optionally filtered by category (shopify, web, growth).",
   inputSchema: {
     category: z
-      .enum(["shopify", "web", "growth"])
+      .enum(["shopify", "web", "growth", "app"])
       .optional()
       .describe("Optional category filter."),
   },
