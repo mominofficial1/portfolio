@@ -693,3 +693,171 @@ function initAutoProjectStacker() {
 }
 
 
+
+
+/* --------------------------------------------------------------------------
+   8. CLIENT INQUIRY FORM & PACKAGE SELECTORS
+   -------------------------------------------------------------------------- */
+function initContactForm() {
+  const form = document.getElementById('project-inquiry-form');
+  if (!form) return;
+
+  const servicePills = form.querySelectorAll('.service-pill');
+  const budgetPills = form.querySelectorAll('.budget-pill');
+  const nameInput = document.getElementById('client-name');
+  const emailInput = document.getElementById('client-email');
+  const phoneInput = document.getElementById('client-phone');
+  const timelineSelect = document.getElementById('client-timeline');
+  const detailsInput = document.getElementById('client-details');
+  const btnSubmit = document.getElementById('btn-submit-inquiry');
+  const btnWhatsApp = document.getElementById('btn-whatsapp-inquiry');
+
+  // Service Pills Toggle
+  servicePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      servicePills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+
+  // Budget Pills Toggle
+  budgetPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      budgetPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+
+  function getSelectedService() {
+    const active = form.querySelector('.service-pill.active');
+    return active ? (active.getAttribute('data-service') || active.innerText.trim()) : 'Custom Project';
+  }
+
+  function getSelectedBudget() {
+    const active = form.querySelector('.budget-pill.active');
+    return active ? (active.getAttribute('data-budget') || active.innerText.trim()) : '$250 - $500';
+  }
+
+  // Submit via Mailto / Email & Toast
+  if (btnSubmit) {
+    btnSubmit.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const timeline = timelineSelect ? timelineSelect.value : '1 - 2 weeks';
+      const details = detailsInput ? detailsInput.value.trim() : '';
+      const service = getSelectedService();
+      const budget = getSelectedBudget();
+
+      if (!name || !email || !details) {
+        showToast('Please enter your name, email, and project details.');
+        if (!name && nameInput) nameInput.focus();
+        else if (!email && emailInput) emailInput.focus();
+        else if (!details && detailsInput) detailsInput.focus();
+        return;
+      }
+
+      btnSubmit.disabled = true;
+      btnSubmit.innerHTML = '<span>Preparing Inquiry...</span> <span class="spinner">⏳</span>';
+
+      setTimeout(() => {
+        showToast('Thank you! Opening email client with your project details...');
+        btnSubmit.disabled = false;
+        btnSubmit.innerHTML = '<span>Inquiry Prepared ✓</span> <span>→</span>';
+
+        const subject = encodeURIComponent(`Project Inquiry: ${service} (${name})`);
+        const body = encodeURIComponent(
+          `Hi Momin,\n\nI would like to inquire about a project:\n\n` +
+          `• Client / Brand: ${name}\n` +
+          `• Email: ${email}\n` +
+          `• Phone / WhatsApp: ${phone || 'Not provided'}\n` +
+          `• Required Service: ${service}\n` +
+          `• Estimated Budget: ${budget}\n` +
+          `• Desired Timeline: ${timeline}\n\n` +
+          `Project Details:\n${details}\n\nBest regards,\n${name}`
+        );
+
+        window.location.href = `mailto:232311005@vu.edu.bd?subject=${subject}&body=${body}`;
+      }, 600);
+    });
+  }
+
+  // Instant WhatsApp Message
+  if (btnWhatsApp) {
+    btnWhatsApp.addEventListener('click', () => {
+      const name = nameInput ? nameInput.value.trim() : 'Prospective Client';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const timeline = timelineSelect ? timelineSelect.value : '1 - 2 weeks';
+      const details = detailsInput ? detailsInput.value.trim() : 'Project inquiry from portfolio';
+      const service = getSelectedService();
+      const budget = getSelectedBudget();
+
+      const text = encodeURIComponent(
+        `Hello Momin, I would like to discuss a project:\n\n` +
+        `• Name: ${name}\n` +
+        `• Service: ${service}\n` +
+        `• Budget: ${budget}\n` +
+        `• Timeline: ${timeline}\n` +
+        (email ? `• Email: ${email}\n` : '') +
+        (phone ? `• Phone: ${phone}\n` : '') +
+        `• Brief: ${details}`
+      );
+
+      showToast('Opening WhatsApp with your project summary...');
+      window.open(`https://wa.me/8801792872188?text=${text}`, '_blank');
+    });
+  }
+}
+
+function initPackageSelectors() {
+  document.querySelectorAll('.btn-card-inquire').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const packageName = btn.getAttribute('data-package') || '';
+      const packageBudget = btn.getAttribute('data-budget') || '';
+      const packageService = btn.getAttribute('data-service') || '';
+      const formSection = document.getElementById('contact-form');
+
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+
+        // Highlight matching budget
+        if (packageBudget) {
+          const budgetPills = formSection.querySelectorAll('.budget-pill');
+          budgetPills.forEach(p => {
+            if (p.getAttribute('data-budget') === packageBudget) {
+              p.click();
+            }
+          });
+        }
+
+        // Highlight matching service
+        if (packageService) {
+          const servicePills = formSection.querySelectorAll('.service-pill');
+          servicePills.forEach(p => {
+            if (p.getAttribute('data-service') === packageService) {
+              p.click();
+            }
+          });
+        }
+
+        // Pre-fill message
+        const detailsInput = document.getElementById('client-details');
+        if (detailsInput) {
+          detailsInput.value = `I am interested in your ${packageName} package. Here are my project requirements and goals:\n`;
+        }
+
+        const nameInput = document.getElementById('client-name');
+        if (nameInput) {
+          setTimeout(() => nameInput.focus(), 600);
+        }
+
+        showToast(`Selected ${packageName} package! Please complete your details.`);
+      } else {
+        window.location.href = 'index.html#contact-form';
+      }
+    });
+  });
+}
