@@ -13,6 +13,8 @@ export default defineConfig({
         services: resolve(__dirname, 'services.html'),
         certifications: resolve(__dirname, 'certifications.html'),
         contact: resolve(__dirname, 'contact.html'),
+        fitlog: resolve(__dirname, 'fitlog.html'),
+        bazardor: resolve(__dirname, 'bazardor.html'),
         privacy: resolve(__dirname, 'privacy.html'),
         terms: resolve(__dirname, 'terms.html'),
         notFound: resolve(__dirname, '404.html'),

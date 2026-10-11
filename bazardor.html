@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>বাজার দর (BazarDor) Case Study — Grocery Price Tracking Web App | MD Momin Ali</title>
+  <meta name="description" content="Comprehensive case study of বাজার দর (BazarDor), a localized Bengali grocery price tracking web application built with Next.js 15, React 19, DaisyUI, Better-Auth, and Zod." />
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230A2625'/><circle cx='50' cy='50' r='38' fill='none' stroke='%23C89D5C' stroke-width='2'/><text x='50' y='58' font-family='Arial, sans-serif' font-size='32' font-weight='bold' fill='%23F7F4EC' text-anchor='middle'>M</text></svg>" />
+
+  <!-- Google Fonts for Bengali Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./src/styles/base.css" />
+  <link rel="stylesheet" href="./src/styles/components.css" />
+  <link rel="stylesheet" href="./src/styles/animations.css" />
+  <style>
+    .bangla-text {
+      font-family: 'Hind Siliguri', 'Noto Sans Bengali', var(--font-body), sans-serif;
+    }
+    .cs-hero-section {
+      padding: clamp(2.5rem, 5vw, 4.5rem) 0 2rem 0;
+    }
+    .cs-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .cs-hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.75rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .cs-hero-sub {
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      color: var(--text-dark-muted);
+      max-width: 820px;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .cs-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .cs-main-media {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-cream);
+      box-shadow: var(--shadow-xl);
+      background-color: #F0FDF4;
+      margin-bottom: 3.5rem;
+    }
+    .cs-main-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .cs-layout-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .cs-layout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .cs-sidebar {
+      position: sticky;
+      top: calc(var(--header-height) + 1.5rem);
+      background-color: var(--bg-offwhite);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    html.dark-theme .cs-sidebar {
+      background-color: var(--bg-offwhite);
+      border-color: var(--border-cream);
+    }
+    .cs-sidebar-item h5 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dark-muted);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+    .cs-sidebar-item p,
+    .cs-sidebar-item div {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+    .cs-tech-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .cs-tech-pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      background-color: var(--bg-cream);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-pill);
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+    .cs-content-block {
+      margin-bottom: 3.5rem;
+    }
+    .cs-section-heading {
+      font-size: clamp(1.4rem, 3.2vw, 2rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--bg-teal-dark);
+    }
+    html.dark-theme .cs-section-heading {
+      color: #FFFFFF;
+    }
+    .cs-prose {
+      font-size: 1.025rem;
+      line-height: 1.8;
+      color: var(--text-dark-muted);
+    }
+    .cs-prose p {
+      margin-bottom: 1.25rem;
+    }
+    .cs-feature-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin: 1.75rem 0;
+    }
+    .cs-feature-card {
+      background-color: var(--bg-offwhite);
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+    }
+    .cs-feature-card:hover {
+      transform: translateY(-3px);
+      border-color: #16A34A;
+    }
+    .cs-feature-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+    .cs-feature-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    html.dark-theme .cs-feature-title {
+      color: #FFFFFF;
+    }
+    .cs-feature-desc {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-dark-muted);
+    }
+    .cs-color-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .cs-swatch-box {
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background-color: var(--bg-offwhite);
+    }
+    .cs-swatch-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+    .cs-swatch-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .cs-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .cs-gallery-item {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-cream);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .cs-gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .cs-gallery-caption {
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-light-muted);
+      background-color: var(--bg-teal-dark);
+      line-height: 1.4;
+    }
+    .cs-cta-box {
+      background: linear-gradient(135deg, #0A2625 0%, #064E3B 100%);
+      color: var(--text-light);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+      margin: 4rem 0 2rem 0;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(22, 163, 74, 0.35);
+    }
+    .cs-cta-box h3 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      margin-bottom: 0.75rem;
+      color: #FFFFFF;
+    }
+    .cs-cta-box p {
+      font-size: 1.05rem;
+      color: var(--text-light-muted);
+      max-width: 620px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.6;
+    }
+    .cs-cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo" aria-label="MD Momin Ali & LeadLux Home">
+        <div class="brand-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#C89D5C" stroke-width="1.5"/>
+            <path d="M7 16L12 8L17 16" stroke="#F7F4EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="2.5" fill="#C89D5C"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">MD MOMIN ALI</span>
+          <span class="brand-sub">SHOPIFY • WEB ENGINEER • AI • MOTION VIDEO</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="works.html" class="nav-link active">Works</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="certifications.html" class="nav-link">Certifications</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Dark/Light Mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Open to Work</span>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-sm">
+          <span>Let's Work Together</span>
+          <span class="btn-icon-right">→</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="works.html" class="nav-link active">Works</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="certifications.html" class="nav-link">Certifications</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <main style="padding-top: calc(var(--header-height) + 1.5rem);">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div style="font-size: 0.85rem; color: var(--text-dark-muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="index.html" style="color: var(--text-dark-muted); text-decoration: none;">Home</a>
+        <span>/</span>
+        <a href="works.html" style="color: var(--text-dark-muted); text-decoration: none;">Selected Works</a>
+        <span>/</span>
+        <span style="color: #16A34A; font-weight: 600;">বাজার দর (BazarDor) Case Study</span>
+      </div>
+
+      <!-- SECTION A: Project Hero -->
+      <section class="cs-hero-section">
+        <div class="cs-badge-row">
+          <span class="project-tag-pill" style="background-color: #16A34A; color: #FFFFFF; font-weight: 700;">Web Application</span>
+          <span class="project-tag-pill" style="background-color: #DCFCE7; color: #166534; font-weight: 600;">Grocery Price Tracking</span>
+          <span class="status-pill" style="border-color: #16A34A; color: #16A34A;">● Production Live</span>
+        </div>
+
+        <h1 class="cs-hero-title">বাজার দর (BazarDor) — Everyday Market Prices at a Glance.</h1>
+        <p class="cs-hero-sub">
+          A localized Bengali grocery price-tracking web application designed to help consumers browse everyday commodity prices, monitor market shifts, and compare prices across key kitchen staples through a clean, accessible interface.
+        </p>
+
+        <div class="cs-hero-actions">
+          <a href="https://bazardor-lime.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="background-color: #16A34A; border-color: #16A34A; color: #FFFFFF;" aria-label="Visit BazarDor Live Deployment">
+            <span>Visit Live Project</span>
+            <span class="btn-icon-right">↗</span>
+          </a>
+          <a href="works.html?filter=webdev" class="btn btn-secondary btn-lg" aria-label="Back to Web Development Projects">
+            <span>← Back to Selected Works</span>
+          </a>
+        </div>
+
+        <!-- Hero Showcase Media -->
+        <div class="cs-main-media">
+          <img src="bazardor-showcase.png" alt="বাজার দর (BazarDor) Bengali Grocery Price Tracking Showcase" />
+        </div>
+      </section>
+
+      <!-- Main Case Study Content with Sidebar -->
+      <div class="cs-layout-grid">
+
+        <!-- Sidebar Meta -->
+        <aside class="cs-sidebar">
+          <div class="cs-sidebar-item">
+            <h5>Role</h5>
+            <p>Full-Stack Web Engineer &amp; Localization Specialist</p>
+          </div>
+          <div class="cs-sidebar-item">
+            <h5>Category</h5>
+            <p>Web Application / Grocery Price Tracking</p>
+          </div>
+          <div class="cs-sidebar-item">
+            <h5>Status &amp; Deployment</h5>
+            <p style="color: #16A34A;">● Active on Vercel</p>
+          </div>
+          <div class="cs-sidebar-item">
+            <h5>Technology Stack</h5>
+            <div class="cs-tech-pill-list">
+              <span class="cs-tech-pill">Next.js 15</span>
+              <span class="cs-tech-pill">React 19</span>
+              <span class="cs-tech-pill">TypeScript 5.7</span>
+              <span class="cs-tech-pill">Tailwind CSS 3.4</span>
+              <span class="cs-tech-pill">DaisyUI 4.12</span>
+              <span class="cs-tech-pill">Better-Auth</span>
+              <span class="cs-tech-pill">Zod</span>
+              <span class="cs-tech-pill">libSQL Database</span>
+            </div>
+          </div>
+          <div class="cs-sidebar-item">
+            <h5>Live Access</h5>
+            <a href="https://bazardor-lime.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #16A34A; font-size: 0.85rem; font-weight: 700; word-break: break-all; display: inline-flex; align-items: center; gap: 0.25rem;">
+              bazardor-lime.vercel.app ↗
+            </a>
+          </div>
+        </aside>
+
+        <!-- Body Content -->
+        <div class="cs-body">
+
+          <!-- SECTION B: Project Overview -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION B — PROJECT OVERVIEW</span>
+            </div>
+            <h2 class="cs-section-heading">Empowering Consumers with Market Price Transparency</h2>
+            <div class="cs-prose">
+              <p>
+                <strong>বাজার দর (BazarDor)</strong> is a localized, information-oriented web application dedicated to tracking and publishing real-time grocery and kitchen essential prices in Bangladesh. Written natively in Bengali, the platform organizes everyday kitchen essentials—from rice (চাল), lentils (ডাল), and cooking oil (তেল) to fresh vegetables (সবজি), meat (মাংস), and fish (মাছ)—into a structured, easily searchable directory.
+              </p>
+              <p>
+                Designed for everyday families, kitchen shoppers, and budget-conscious citizens, BazarDor solves the problem of arbitrary wet-market markups by displaying current market rates alongside directional price change indicators (increase, decrease, steady).
+              </p>
+            </div>
+          </section>
+
+          <!-- SECTION C: Problem Statement -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION C — PROBLEM STATEMENT</span>
+            </div>
+            <h2 class="cs-section-heading">Price Volatility &amp; Lack of Localized Data in Bangladesh</h2>
+            <div class="cs-prose">
+              <p>
+                Urban and rural consumers in Bangladesh navigate fluctuating kitchen markets with significant asymmetry:
+              </p>
+              <ul style="padding-left: 1.25rem; margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Extreme short-term price shifts:</strong> Monsoon rains, transportation bottlenecks, and seasonal shortages cause sharp day-to-day spikes in essential goods like green chili (কাঁচামরিচ), onions (পেঁয়াজ), and potatoes (আলু).</li>
+                <li><strong>No centralized, localized comparison tool:</strong> Government price bulletins (such as DAM or TCB) are often published in rigid PDF reports or outdated tabular portals that are nearly impossible to read on a mobile phone during a morning bazaar trip.</li>
+                <li><strong>English-only barrier in tech:</strong> Many consumer tech apps default to English, creating friction for everyday citizens who naturally read Bengali market names and weight units (কেজি, লিটার, হালি).</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SECTION D: Project Goals -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION D — PROJECT GOALS</span>
+            </div>
+            <h2 class="cs-section-heading">Core Objectives for BazarDor</h2>
+            <div class="cs-feature-card-grid">
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">🇧🇩</div>
+                <h4 class="cs-feature-title">Native Bengali Presentation</h4>
+                <p class="cs-feature-desc">Ensure 100% fluent Bangla localization with readable typography, authentic unit labels (কেজি, লিটার, হালি), and regional market tags.</p>
+              </div>
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">📊</div>
+                <h4 class="cs-feature-title">Clear Price Change Indicators</h4>
+                <p class="cs-feature-desc">Display instant visual delta badges (+৳২, -৳৩) so users can immediately distinguish rising items from falling or stable staples.</p>
+              </div>
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">🛒</div>
+                <h4 class="cs-feature-title">Intuitive Category Navigation</h4>
+                <p class="cs-feature-desc">Organize hundreds of goods into accessible categories: চাল, ডাল, তেল, সবজি, মাছ, মাংস, মসলা, and ডিম ও দুগ্ধজাত.</p>
+              </div>
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">🔍</div>
+                <h4 class="cs-feature-title">Instant Search &amp; Market Filter</h4>
+                <p class="cs-feature-desc">Fast client-side query matching allowing shoppers to type product names in Bengali and find current prices in under a second.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION E: My Role -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION E — ROLE &amp; RESPONSIBILITIES</span>
+            </div>
+            <h2 class="cs-section-heading">Full-Stack Development &amp; Cultural Localization</h2>
+            <div class="cs-prose">
+              <p>
+                My verified responsibilities across the development lifecycle included:
+              </p>
+              <ul style="padding-left: 1.25rem; margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Full-Stack Architecture:</strong> Engineered Next.js 15 App Router application with React 19 server and client components.</li>
+                <li><strong>UI &amp; Localization System:</strong> Designed a fresh mint-green aesthetic with DaisyUI and Tailwind CSS, configuring Bengali font fallbacks and high-legibility typographic scales.</li>
+                <li><strong>Authentication &amp; User Features:</strong> Integrated Better-Auth with Zod schema validation for user account management and watchlist capabilities.</li>
+                <li><strong>Data Schema &amp; Storage:</strong> Configured libSQL / SQLite data layer for flexible commodity and category records.</li>
+                <li><strong>Deployment &amp; Edge Optimization:</strong> Deployed to Vercel production with responsive mobile rendering for 3G/4G bandwidth conditions.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SECTION F: Design Direction -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION F — DESIGN DIRECTION &amp; VISUAL IDENTITY</span>
+            </div>
+            <h2 class="cs-section-heading">Fresh Market Palette &amp; Bengali Typography</h2>
+            <div class="cs-prose">
+              <p>
+                The visual identity of BazarDor communicates freshness, cleanliness, and trust:
+              </p>
+            </div>
+
+            <div class="cs-color-swatches">
+              <div class="cs-swatch-box">
+                <div class="cs-swatch-circle" style="background-color: #16A34A;"></div>
+                <div class="cs-swatch-label">Emerald Green (#16A34A)<br><span style="font-size: 0.72rem; color: var(--text-dark-muted);">Brand Accents &amp; CTAs</span></div>
+              </div>
+              <div class="cs-swatch-box">
+                <div class="cs-swatch-circle" style="background-color: #F0FDF4;"></div>
+                <div class="cs-swatch-label">Soft Mint Surface (#F0FDF4)<br><span style="font-size: 0.72rem; color: var(--text-dark-muted);">Background Tint</span></div>
+              </div>
+              <div class="cs-swatch-box">
+                <div class="cs-swatch-circle" style="background-color: #FFFFFF;"></div>
+                <div class="cs-swatch-label">Pure White (#FFFFFF)<br><span style="font-size: 0.72rem; color: var(--text-dark-muted);">Product Cards</span></div>
+              </div>
+              <div class="cs-swatch-box">
+                <div class="cs-swatch-circle" style="background-color: #DC2626;"></div>
+                <div class="cs-swatch-label">Price Alert Red (#DC2626)<br><span style="font-size: 0.72rem; color: var(--text-dark-muted);">Price Rise Indicator</span></div>
+              </div>
+            </div>
+
+            <div class="cs-prose">
+              <p>
+                <strong>Typography:</strong> Implemented <span class="bangla-text">Hind Siliguri</span> and <span class="bangla-text">Noto Sans Bengali</span> with clear font weights (500/600/700) to avoid cramped conjunct glyphs (যুক্তাক্ষর) and ensure comfortable reading across low-resolution mobile screens.
+              </p>
+            </div>
+          </section>
+
+          <!-- SECTION G: Key Features -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION G — KEY FEATURES IMPLEMENTATION</span>
+            </div>
+            <h2 class="cs-section-heading">Verified Functional Capabilities</h2>
+            <div class="cs-feature-card-grid">
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">📢</div>
+                <h4 class="cs-feature-title">Live Bengali Price Ticker</h4>
+                <p class="cs-feature-desc">Continuous ticker ribbon displaying today's prices for staples: আলু ৳৫০/কেজি, পেঁয়াজ ৳৮০/কেজি, ব্রয়লার ৳১৮০/কেজি with directional delta arrows.</p>
+              </div>
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">🥕</div>
+                <h4 class="cs-feature-title">Product Category Hub</h4>
+                <p class="cs-feature-desc">Categorized browsing across সবজি, মাছ, মাংস, চাল, ডাল, তেল, এবং মসলা with curated icon navigation and item counts.</p>
+              </div>
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">📈</div>
+                <h4 class="cs-feature-title">Price Trend Badges</h4>
+                <p class="cs-feature-desc">Color-coded badges (Green +৳২ for increase, Red -৳৫ for decrease) giving shoppers instant visual cues on commodity movement.</p>
+              </div>
+              <div class="cs-feature-card">
+                <div class="cs-feature-icon">🔒</div>
+                <h4 class="cs-feature-title">Better-Auth Authentication</h4>
+                <p class="cs-feature-desc">Secure account sign-in and registration flow powered by Better-Auth, allowing user preferences and watchlist storage.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION H: Technical Implementation -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION H — TECHNICAL IMPLEMENTATION</span>
+            </div>
+            <h2 class="cs-section-heading">Verified Next.js 15 Full-Stack Architecture</h2>
+            <div class="cs-prose">
+              <p>
+                Inspection of the BazarDor codebase confirms the verified technical stack:
+              </p>
+              <ul style="padding-left: 1.25rem; margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Next.js 15 (App Router):</strong> Leverages server component streaming for initial page payloads combined with client interactivity for instant search.</li>
+                <li><strong>React 19 &amp; TypeScript 5.7:</strong> Strict type safety for price models, market locations, and category taxonomies.</li>
+                <li><strong>Tailwind CSS 3.4 &amp; DaisyUI 4.12:</strong> Modern utility styling and accessible component primitives (cards, badges, modals, input groups).</li>
+                <li><strong>Better-Auth &amp; Zod:</strong> Modern authentication framework supporting credential-based sessions with Zod runtime schema verification.</li>
+                <li><strong>libSQL / SQLite Client:</strong> Lightweight database driver for managing commodity records and regional market benchmarks.</li>
+                <li><strong>Vercel Production Deployment:</strong> Hosted with global asset CDN distribution and clean route mapping.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SECTION I: Responsive Design -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION I — RESPONSIVE DESIGN</span>
+            </div>
+            <h2 class="cs-section-heading">Designed for Real-World Wet Market Conditions</h2>
+            <div class="cs-prose">
+              <p>
+                A price-tracker is most useful when the shopper is actually standing inside a busy bazaar. Therefore, responsive behavior was rigorously verified:
+              </p>
+              <ul style="padding-left: 1.25rem; margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><strong>Mobile Viewport (&lt; 640px):</strong> High-contrast cards with large Bengali prices, prominent search bar pinned near the top, and swipeable category pills.</li>
+                <li><strong>Tablet Viewport (640px – 1024px):</strong> Balanced 2-column commodity grid with side-by-side trend indicators and district selection dropdown.</li>
+                <li><strong>Desktop Viewport (&gt; 1024px):</strong> Full hero banner, live horizontal price ticker, and multi-column category showcases.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- SECTION J: Challenges and Solutions -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION J — CHALLENGES &amp; SOLUTIONS</span>
+            </div>
+            <h2 class="cs-section-heading">Localization &amp; Data Display Decisions</h2>
+            <div class="cs-prose">
+              <p>
+                <strong>Challenge: Bengali Glyph Rendering &amp; Font Loading Overhead.</strong><br>
+                Complex Bengali conjunct characters can render incorrectly or cause layout jumps if web fonts fail to load gracefully on slow mobile connections.
+              </p>
+              <p>
+                <strong>Solution:</strong> Implemented Google Fonts preconnect with fallback stacks (`Hind Siliguri`, `Noto Sans Bengali`, `sans-serif`) and subset font glyphs to minimize latency while guaranteeing accurate text rendering.
+              </p>
+              <p>
+                <strong>Challenge: Standardizing Fluctuating Unit Metrics.</strong><br>
+                Different commodities use different metrics in Bangladesh (e.g. eggs by 'হালি', vegetables by 'কেজি', oils by 'লিটার').
+              </p>
+              <p>
+                <strong>Solution:</strong> Normalized unit structures in TypeScript contracts so price cards dynamically render the correct cultural denominator (`/ কেজি`, `/ হালি`, `/ লিটার`) seamlessly.
+              </p>
+            </div>
+          </section>
+
+          <!-- SECTION K: Outcome and Learning -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION K — OUTCOME &amp; LEARNING</span>
+            </div>
+            <h2 class="cs-section-heading">Empowering Citizen Utilities</h2>
+            <div class="cs-prose">
+              <p>
+                BazarDor demonstrates how modern frontend frameworks can solve genuine local problems. By combining accessible Bengali typography, clear visual price indicators, and lightweight architecture, the project provides an authentic public good.
+              </p>
+              <p>
+                It showcases advanced competence in Next.js 15 App Router architecture, DaisyUI component design, Better-Auth integration, and culturally resonant UI localization.
+              </p>
+            </div>
+          </section>
+
+          <!-- SECTION L: Visual Showcase -->
+          <section class="cs-content-block">
+            <div class="eyebrow">
+              <span>●</span>
+              <span>SECTION L — SCREENSHOTS &amp; VISUAL SHOWCASE</span>
+            </div>
+            <h2 class="cs-section-heading">Interface Showcase &amp; Design Assets</h2>
+            <div class="cs-gallery-grid">
+              <div class="cs-gallery-item">
+                <img src="bazardor-showcase.png" alt="বাজার দর (BazarDor) Multi-Device Showcase on Laptop and Mobile" loading="lazy" />
+                <div class="cs-gallery-caption">Multi-Device Showcase: Fresh mint-green surfaces and commodity cards across laptop and phone screens.</div>
+              </div>
+              <div class="cs-gallery-item">
+                <img src="bazar-hero.png" alt="বাজার দর (BazarDor) Vegetable Basket Illustration" loading="lazy" />
+                <div class="cs-gallery-caption">Market Visual Asset: Fresh vegetable basket illustration reinforcing clean market themes.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECTION M: Final Call to Action -->
+          <div class="cs-cta-box">
+            <h3>Explore বাজার দর Live</h3>
+            <p>
+              Check today's commodity prices, test the localized Bengali search, and inspect the responsive design on your phone or desktop.
+            </p>
+            <div class="cs-cta-actions">
+              <a href="https://bazardor-lime.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg" aria-label="Open BazarDor on Vercel">
+                <span>Visit Live Project (bazardor-lime.vercel.app)</span>
+                <span class="btn-icon-right">↗</span>
+              </a>
+              <a href="works.html?filter=webdev" class="btn btn-outline-light btn-lg" aria-label="Return to Portfolio Works">
+                <span>Back to Web Development Portfolio</span>
+                <span class="btn-icon-right">→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo" style="color: var(--text-light); margin-bottom: 1rem;">
+            <div class="brand-badge" style="background-color: var(--bg-teal-rich); border-color: var(--border-teal-dark);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="#C89D5C" stroke-width="1.5"/>
+                <path d="M7 16L12 8L17 16" stroke="#F7F4EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="2.5" fill="#C89D5C"/>
+              </svg>
+            </div>
+            <span>MD MOMIN ALI</span>
+          </div>
+          <p>
+            Shopify • Web Engineer • AI • Motion Video
+          </p>
+          <p style="margin-top: 0.75rem; color: var(--accent-gold); font-size: 0.8125rem;">
+            ● Based in Rajshahi, Bangladesh
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="works.html">Selected Works</a>
+            <a href="services.html">Services &amp; Pricing</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Direct Contact</h5>
+          <div class="footer-links">
+            <a href="mailto:232311005@vu.edu.bd">232311005@vu.edu.bd</a>
+            <a href="https://wa.me/8801792872188" target="_blank" rel="noopener noreferrer">+880 1792 872188 (WhatsApp)</a>
+            <a href="https://www.behance.net/mominofficial" target="_blank" rel="noopener noreferrer">Behance Portfolio</a>
+            <a href="https://github.com/mominofficial" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+            <a href="https://www.linkedin.com/in/md-momin-ali-3913b6351" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 MD Momin Ali. All rights reserved.</div>
+        <div>High-Performance Modern Web • Deployed on Vercel</div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

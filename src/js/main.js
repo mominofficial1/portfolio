@@ -391,8 +391,14 @@ function initProjectModals() {
 
   // Attach event listener with delegation / data-project-id check
   document.addEventListener('click', (e) => {
-    // If clicking a direct external link on the card, let it open normally
-    if (e.target.closest('a[target="_blank"]')) return;
+    // If clicking a direct link with an actual destination page, let it navigate normally
+    const link = e.target.closest('a');
+    if (link) {
+      const href = link.getAttribute('href');
+      if (link.target === '_blank' || (href && !href.startsWith('#') && !href.startsWith('javascript:'))) {
+        return;
+      }
+    }
 
     const trigger = e.target.closest('[data-project-id]');
     if (trigger) {
