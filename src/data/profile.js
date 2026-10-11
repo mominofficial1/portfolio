@@ -1,7 +1,7 @@
 export const profile = {
   name: "MD Momin Ali",
-  headline: "Motion Designer • Video Editor • Shopify Developer • Digital Marketer",
-  secondaryPositioning: "Motion Graphics, High-Retention Video Editing, Shopify Theme Development & GMC Specialist.",
+  headline: "Shopify • Web Engineer • AI • Motion Video",
+  secondaryPositioning: "High-Converting Shopify Stores, Scalable Full-Stack Web Engineering, Applied AI Integrations & Cinematic Motion Video.",
   location: "Rajshahi, Bangladesh",
   status: "Open to Work",
   email: "232311005@vu.edu.bd",
@@ -42,11 +42,11 @@ export const profile = {
     }
   ],
   skills: {
-    motionAndVideo: ["Adobe After Effects", "Premiere Pro", "Motion Graphics", "Keyframing", "Kinetic Typography", "CapCut Pro", "UGC Video Ads", "Color Grading", "Sound Design"],
-    development: ["HTML5", "CSS3 / Modern Layouts", "JavaScript (ES6+)", "React.js", "Node.js", "MongoDB", "SQL", "C / C++", "Python", "Flutter", "Git / GitHub Pages"],
-    ecommerce: ["Shopify Liquid", "Theme Development", "Product Architecture", "Conversion Optimization", "Cart Optimization", "Trust Signals & Badges", "Custom Checkout Rules"],
-    marketing: ["Google Ads", "Google Merchant Center (GMC)", "Misrepresentation Fixes", "Shopping Feeds", "Lead Generation & B2B Data", "WhatsApp Marketing", "Email Marketing", "Facebook / TikTok Ads"],
-    creative: ["Adobe After Effects", "Adobe Premiere Pro", "Canva Pro", "CapCut Pro Video Editing", "Social Media Design", "UI/UX Prototyping", "Store Banners"]
+    shopify: ["Shopify Liquid & Theme Dev", "Headless Shopify", "Conversion Rate Optimization (CRO)", "Product Architecture", "Cart Optimization", "Speed Optimization", "GMC Shopping Feeds"],
+    webEngineering: ["Full-Stack Web Development", "JavaScript (ES6+) / TypeScript", "React.js / Vite / Next.js", "Node.js & REST APIs", "HTML5 & Modern CSS3", "Responsive Architecture", "Git & CI/CD"],
+    ai: ["Gemini API & LLM Integrations", "AI Agents & Autonomous Workflows", "Prompt Engineering & RAG", "AI-Powered Media Generation", "Computer Vision & Automation"],
+    motionVideo: ["Adobe After Effects", "Premiere Pro Commercial Editing", "3D Visuals & Motion Graphics", "Kinetic Typography", "High-Retention Video Ads", "Sound Design & Color Grading"],
+    marketing: ["Google Merchant Center (GMC)", "Google Ads & Shopping Feeds", "Lead Generation & B2B Data", "WhatsApp Marketing", "Conversion Funnel Optimization"]
   },
   experience: [
     {
