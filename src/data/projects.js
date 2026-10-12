@@ -531,7 +531,7 @@ export const projects = [
     featured: false,
     gridType: "standard",
     image: "devconf.png",
-    url: "https://mominofficial.github.io/assignment1/",
+    url: "https://mominofficial1.github.io/assignment1/",
     description: "Front-end development project created during Programming Hero Batch 14 using HTML, CSS, and JavaScript fundamentals.",
     deliverables: ["Semantic HTML5 Structure", "Responsive CSS Grid/Flexbox", "Clean Interactive UI", "GitHub Pages Deployment"],
     gmcCompliance: "Early foundational software development showcase."
