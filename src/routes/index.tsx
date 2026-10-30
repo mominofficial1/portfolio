@@ -199,12 +199,12 @@ function Home() {
       ? CAPABILITIES
       : CAPABILITIES.filter((s) => s.category === skillCategory);
 
-  // Faster, fluid auto-rotation for animated capabilities (1600ms rhythm)
+  // Faster, fluid auto-rotation for animated capabilities (700ms rhythm)
   useEffect(() => {
     if (isSkillPaused || filteredSkills.length === 0) return;
     const interval = setInterval(() => {
       setActiveSkillIndex((prev) => (prev + 1) % filteredSkills.length);
-    }, 1600);
+    }, 700);
     return () => clearInterval(interval);
   }, [isSkillPaused, filteredSkills.length]);
 
@@ -465,36 +465,43 @@ function Home() {
             ))}
           </div>
 
-          {/* Oversized Kinetic Typography Cloud Display (Faster 0.22s snappy transition) */}
-          <div className="relative mt-10 flex min-h-[320px] flex-wrap items-center justify-center gap-x-10 gap-y-6 rounded-3xl border border-cream/15 bg-cream/[0.04] p-8 text-center backdrop-blur-sm sm:min-h-[380px]">
+          {/* Oversized Kinetic Typography Cloud Display (Fast 0.12s snappy transition & high contrast) */}
+          <div className="relative mt-10 flex min-h-[320px] flex-wrap items-center justify-center gap-x-10 gap-y-6 rounded-3xl border border-cream/20 bg-cream/[0.05] p-8 text-center backdrop-blur-sm sm:min-h-[380px]">
             {filteredSkills.map((skill, idx) => {
               const isHighlight = idx === activeSkillIndex;
               return (
                 <motion.div
                   key={skill.name}
                   animate={{
-                    scale: isHighlight ? 1.07 : 0.98,
-                    opacity: isHighlight ? 1 : 0.55,
-                    y: isHighlight ? -4 : 0,
+                    scale: isHighlight ? 1.1 : 0.98,
+                    opacity: isHighlight ? 1 : 0.82,
+                    y: isHighlight ? -6 : 0,
                   }}
-                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  transition={{ duration: 0.12, ease: "easeOut" }}
                   className="group relative cursor-pointer"
                   onClick={() => setActiveSkillIndex(idx)}
                 >
                   <p
                     className={cn(
-                      "font-monumental tracking-tight transition-all duration-200",
+                      "font-monumental tracking-tight transition-all duration-150",
                       skill.size === "huge" && "text-3xl sm:text-6xl lg:text-7xl",
                       skill.size === "large" && "text-2xl sm:text-4xl lg:text-5xl",
                       skill.size === "medium" && "text-xl sm:text-3xl lg:text-4xl",
                       isHighlight
-                        ? "text-cream drop-shadow-[0_0_25px_rgba(240,237,204,0.45)]"
-                        : "text-cream/40 group-hover:text-cream/80",
+                        ? "text-white font-extrabold drop-shadow-[0_0_35px_rgba(240,237,204,0.95)]"
+                        : "text-[#F0EDCC]/80 group-hover:text-white",
                     )}
                   >
                     {skill.name}
                   </p>
-                  <span className="font-mono text-[10px] tracking-widest text-cream uppercase opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                  <span
+                    className={cn(
+                      "font-mono text-[10px] font-bold tracking-widest uppercase transition-opacity duration-150",
+                      isHighlight
+                        ? "text-emerald opacity-100"
+                        : "text-cream/90 opacity-0 group-hover:opacity-100",
+                    )}
+                  >
                     {skill.level}
                   </span>
                 </motion.div>
@@ -719,11 +726,11 @@ function Home() {
             {/* Left: Device Mockup Presentation */}
             <div className="relative group">
               <div className="absolute -inset-4 rounded-3xl bg-emerald/10 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="relative overflow-hidden rounded-2xl border border-cream/30 bg-card p-3 shadow-2xl backdrop-blur-xl">
-                <div className="flex items-center justify-between border-b border-cream/20 pb-2 px-2 font-mono text-[10px] text-cream">
-                  <span className="font-bold tracking-wider">SPOTLIGHT CASE STUDY • {spotlightProject.slug.toUpperCase()}</span>
-                  <span className="flex items-center gap-1.5 text-emerald font-semibold">
-                    <span className="size-1.5 rounded-full bg-emerald animate-pulse" />
+              <div className="relative overflow-hidden rounded-2xl border-2 border-ink/20 bg-card p-3 shadow-2xl backdrop-blur-xl">
+                <div className="flex items-center justify-between border-b border-ink/15 pb-2.5 px-3 font-mono text-[11px] text-ink">
+                  <span className="font-black tracking-wider text-ink">SPOTLIGHT CASE STUDY • {spotlightProject.slug.toUpperCase()}</span>
+                  <span className="flex items-center gap-1.5 text-emerald font-black">
+                    <span className="size-2 rounded-full bg-emerald animate-pulse" />
                     AWARD-WINNING / ACTIVE
                   </span>
                 </div>
@@ -734,7 +741,7 @@ function Home() {
                 />
               </div>
 
-              <div className="absolute -bottom-5 -right-4 rounded-full border border-cream/30 bg-ink px-4 py-2 font-mono text-[10px] font-bold tracking-wider text-cream uppercase shadow-xl">
+              <div className="absolute -bottom-5 -right-4 rounded-full border-2 border-cream bg-ink px-5 py-2 font-mono text-[11px] font-bold tracking-wider text-cream uppercase shadow-xl">
                 NASA GLOBAL NOMINEE • VERIFIED CASE STUDY
               </div>
             </div>
@@ -742,14 +749,14 @@ function Home() {
             {/* Right: Editorial Narrative with 100% High Contrast Text Visibility */}
             <div className="space-y-6">
               {/* Badge with high-contrast Warm Cream text on dark teal */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-cream/30 bg-cream/10 px-3.5 py-1 font-mono text-[11px] font-bold tracking-widest text-cream uppercase shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border-2 border-cream/40 bg-cream/15 px-4 py-1.5 font-mono text-xs font-bold tracking-widest text-cream uppercase shadow-sm">
                 <span>SPOTLIGHT CHAPTER • {spotlightProject.tag}</span>
               </div>
 
               {/* Main Heading with 100% Crisp Cream Contrast */}
               <h2 className="font-monumental text-4xl tracking-tight text-cream sm:text-6xl">
-                BUILT FOR{" "}
-                <span className="font-editorial-italic text-cream font-normal underline decoration-emerald/60 underline-offset-8">
+                <span className="text-cream font-bold">BUILT FOR</span>{" "}
+                <span className="font-editorial-italic text-cream font-normal underline decoration-emerald decoration-2 underline-offset-8">
                   REAL IMPACT.
                 </span>
               </h2>
@@ -758,18 +765,18 @@ function Home() {
                 {spotlightProject.title}
               </h3>
 
-              {/* Description in full contrast text-cream/90 */}
-              <p className="text-base leading-relaxed text-cream/90 font-medium">
+              {/* Description in full contrast text-cream */}
+              <p className="text-base leading-relaxed text-cream font-normal">
                 AI-powered precision agriculture and orbital telemetry platform, recognized globally as 2nd Runner Up and Global Nominee at NASA Space Apps Challenge 2025.
               </p>
 
               {/* Highlights in crisp text-cream */}
               {spotlightProject.highlights && (
-                <ul className="space-y-2.5 font-mono text-xs text-cream font-medium">
+                <ul className="space-y-3 font-mono text-xs text-cream font-semibold">
                   {spotlightProject.highlights.slice(0, 3).map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <span className="mt-0.5 size-1.5 rounded-full bg-emerald shrink-0" />
-                      <span>{item}</span>
+                      <span className="mt-1 size-2 rounded-full bg-emerald shadow-[0_0_8px_#2A7D68] shrink-0" />
+                      <span className="text-cream">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -780,7 +787,7 @@ function Home() {
                 <Link
                   to="/works/$slug"
                   params={{ slug: spotlightProject.slug }}
-                  className="inline-flex items-center gap-2 rounded-full bg-cream px-7 py-3 font-mono text-xs font-bold tracking-wider text-ink uppercase shadow-lg transition-transform hover:scale-105 hover:bg-cream/90"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-cream bg-cream px-7 py-3 font-mono text-xs font-bold tracking-wider text-ink uppercase shadow-lg transition-transform hover:scale-105 hover:bg-cream/90"
                 >
                   <span>VIEW FULL CASE STUDY</span>
                   <ArrowRight size={14} />
@@ -791,7 +798,7 @@ function Home() {
                     href={spotlightProject.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-cream/40 bg-cream/10 px-6 py-3 font-mono text-xs font-semibold tracking-wider text-cream uppercase backdrop-blur transition-colors hover:border-cream hover:bg-cream/20"
+                    className="inline-flex items-center gap-2 rounded-full border-2 border-cream bg-cream/15 px-6 py-3 font-mono text-xs font-bold tracking-wider text-cream uppercase backdrop-blur transition-all hover:bg-cream hover:text-ink shadow-md"
                   >
                     <span>OPEN PROJECT LINK</span>
                     <ExternalLink size={14} />
