@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-monumental: "Bebas Neue", "Space Grotesk", sans-serif;
+  --font-editorial: "Instrument Serif", Georgia, serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-sans: "Inter", sans-serif;
@@ -239,4 +241,54 @@ h1, h2, h3, h4 {
 
 @utility breathe-glow {
   animation: breathe 5s ease-in-out infinite;
+}
+
+@utility font-monumental {
+  font-family: var(--font-monumental);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@utility font-editorial {
+  font-family: var(--font-editorial);
+}
+
+@utility font-editorial-italic {
+  font-family: var(--font-editorial);
+  font-style: italic;
+}
+
+@utility cinematic-glass {
+  background: color-mix(in oklab, var(--card) 85%, transparent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
+}
+
+@utility cinematic-halo {
+  background: radial-gradient(
+    circle at center,
+    color-mix(in oklab, var(--brand-indigo) 35%, transparent) 0%,
+    color-mix(in oklab, var(--brand-emerald) 18%, transparent) 45%,
+    transparent 72%
+  );
+}
+
+@utility perspective-1000 {
+  perspective: 1000px;
+}
+
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@utility marquee-scroll {
+  display: flex;
+  width: max-content;
+  animation: marquee-track 30s linear infinite;
+}
+
+@keyframes marquee-track {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }

@@ -1,20 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { Code2, Palette, ShoppingBag, LineChart, GraduationCap, Briefcase, Server, Check, ArrowRight } from "lucide-react";
-import momin from "@/assets/momin.png.asset.json";
+import {
+  Code2,
+  Palette,
+  ShoppingBag,
+  LineChart,
+  GraduationCap,
+  Briefcase,
+  Server,
+  Check,
+  ArrowRight,
+  ArrowLeft,
+  Trophy,
+  Award,
+  Sparkles,
+} from "lucide-react";
 import { SERVICES, SKILL_GROUPS } from "@/lib/portfolio";
 import { Reveal, SectionHeading, Stagger, TiltCard, Blob } from "@/components/site/motion-primitives";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About MD Momin Ali — Shopify Developer" },
+      { title: "Profile & Journey — MD Momin Ali" },
       {
         name: "description",
         content:
-          "MD Momin Ali is a Shopify developer, front-end engineer and digital marketer building fast, conversion-focused storefronts.",
+          "MD Momin Ali is a Shopify developer, full-stack engineer and digital marketer building high-conversion storefronts and apps in Rajshahi, Bangladesh.",
       },
-      { property: "og:title", content: "About MD Momin Ali — Shopify Developer" },
+      { property: "og:title", content: "Profile & Journey — MD Momin Ali" },
       {
         property: "og:description",
         content: "Shopify developer, front-end engineer and digital marketer.",
@@ -25,135 +38,175 @@ export const Route = createFileRoute("/about")({
 });
 
 const SKILLS = [
-  { icon: ShoppingBag, title: "Shopify Development", body: "Liquid theming, custom sections, app integrations and speed tuning." },
-  { icon: Code2, title: "Front-End Engineering", body: "React, Tailwind CSS, JavaScript, semantic HTML and accessible markup." },
-  { icon: Server, title: "Back-End & Full-Stack", body: "Node.js, Express, REST APIs, MongoDB, authentication and admin dashboards." },
-  { icon: Palette, title: "UI & Conversion Design", body: "Editorial layouts, trust-building components and clean product storytelling." },
-  { icon: LineChart, title: "Digital Marketing", body: "Meta, Google and TikTok ads, SEO fundamentals, lead generation and WhatsApp API outreach." },
+  { icon: ShoppingBag, title: "Shopify Liquid Theming", body: "Bespoke storefronts, custom sections, cart optimizations, and Google Merchant Center compliance." },
+  { icon: Code2, title: "Front-End Engineering", body: "React, TypeScript, Tailwind CSS, high-performance web apps, and accessible interfaces." },
+  { icon: Server, title: "Back-End & Full-Stack", body: "Node.js, Express, REST APIs, MongoDB, authentication, and admin dashboard systems." },
+  { icon: Palette, title: "UI & Conversion Design", body: "Editorial layouts, trust-building UI components, and high-converting checkout UX." },
+  { icon: LineChart, title: "Digital Growth & Video", body: "Meta & Google Ads, Premiere Pro commercial video editing, and automated WhatsApp API outreach." },
 ];
 
 const TIMELINE = [
-  { icon: GraduationCap, when: "2024 — Present", title: "CSE Student, Varendra University", body: "Studying computer science while shipping client work in parallel." },
-  { icon: GraduationCap, when: "2024", title: "Programming Hero — Batch 14", body: "Completed intensive web development training in HTML, CSS and JavaScript." },
-  { icon: Briefcase, when: "Oct 2024 — Present", title: "Royal Hair Wigs — Social Media & Creative", body: "Managing social accounts, Canva ad design, CapCut video edits and WhatsApp API lead generation for clients in Dubai, the USA and Italy." },
-  { icon: Briefcase, when: "2025 — Present", title: "Freelance Shopify Developer", body: "Building storefronts for décor, beauty and footwear brands worldwide." },
+  { icon: GraduationCap, when: "2024 — PRESENT", title: "CSE Student, Varendra University", body: "Pursuing BSc in Computer Science & Engineering in Rajshahi, balancing software architecture and production client shipping." },
+  { icon: Trophy, when: "2025", title: "NASA Space Apps Challenge — 2nd Runner Up", body: "Recognized nationally for innovative engineering, scientific data integration, and collaborative problem solving." },
+  { icon: Briefcase, when: "OCT 2024 — PRESENT", title: "Royal Hair Wigs — Social Media & Creative Lead", body: "Managing multi-channel digital client acquisition, high-impact commercial video editing, and WhatsApp API lead systems across Dubai, the USA and Italy." },
+  { icon: Briefcase, when: "2025 — PRESENT", title: "Freelance Shopify & Web Developer", body: "Engineering custom Liquid storefronts for brands across the UK, Europe, and Asia." },
 ];
 
 function AboutPage() {
   return (
-    <div className="relative mx-auto max-w-6xl px-5 pt-32">
-      <Blob className="left-0 top-20 size-80 bg-indigo/15 breathe-glow" />
-      <div className="grid items-center gap-10 md:grid-cols-[0.9fr_1.1fr]">
-        <Reveal from="left">
-          <motion.div
-            whileHover={{ rotate: -2, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 200, damping: 14 }}
-            className="surface-card overflow-hidden p-3"
-          >
-            <img
-              src={momin.url}
-              alt="Portrait of MD Momin Ali"
-              className="w-full rounded-xl object-cover"
-            />
-          </motion.div>
-        </Reveal>
-        <Reveal from="right" delay={0.1}>
-          <span className="badge-pill">About Me</span>
-          <h1 className="mt-4 text-4xl font-bold uppercase sm:text-5xl">MD Momin Ali</h1>
-          <p className="mt-2 font-mono text-sm tracking-wider text-indigo">
-            Shopify Developer • Full-Stack Engineer • Digital Marketer
-          </p>
-          <p className="mt-5 leading-relaxed text-body">
-            I build Shopify storefronts and full-stack web apps that feel considered — fast,
-            clean and made to convert. Front-end in React and Tailwind, back-end in Node,
-            Express and MongoDB, plus custom Liquid sections and layouts built around how
-            people actually shop.
-          </p>
-          <p className="mt-4 leading-relaxed text-body">
-            I&apos;m currently a Computer Science &amp; Engineering student at Varendra University
-            in Rajshahi, Bangladesh, working with brands across décor, beauty and footwear.
-          </p>
-        </Reveal>
-      </div>
+    <div className="relative min-h-screen px-6 pt-36 pb-28">
+      <div className="mx-auto max-w-6xl">
+        {/* Back Link */}
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 font-mono text-xs font-semibold tracking-wider text-body uppercase transition-colors hover:text-indigo"
+        >
+          <ArrowLeft size={14} /> BACK TO HOME
+        </Link>
 
-      <div className="mt-20">
-        <SectionHeading badge="Capabilities" title="What I Do" />
-        <Stagger className="mt-8 grid gap-5 sm:grid-cols-2">
-          {SKILLS.map(({ icon: Icon, title, body }) => (
-            <TiltCard key={title} accent="indigo">
-              <Icon className="text-indigo" size={22} />
-              <h3 className="mt-3 text-lg font-bold">{title}</h3>
-              <p className="mt-1.5 text-sm text-body">{body}</p>
-            </TiltCard>
-          ))}
-        </Stagger>
-      </div>
-
-      <div className="mt-20">
-        <SectionHeading
-          badge="Tech Stack"
-          title="Skills"
-          subtitle="Tools I use daily across storefronts, apps and campaigns."
-        />
-        <Stagger className="mt-8 grid gap-5 sm:grid-cols-2">
-          {SKILL_GROUPS.map((group) => (
-            <TiltCard key={group.title} accent="emerald">
-              <h3 className="text-lg font-bold">{group.title}</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-ink/15 bg-card px-3 py-1 text-xs font-medium"
-                  >
-                    {item}
-                  </span>
-                ))}
+        {/* Section Hero Split */}
+        <div className="mt-8 grid items-center gap-12 lg:grid-cols-[1fr_1.3fr]">
+          <div className="relative group">
+            <div className="absolute -inset-4 rounded-3xl bg-indigo/15 blur-2xl opacity-60" />
+            <div className="relative overflow-hidden rounded-3xl border border-ink/10 bg-card p-3 shadow-2xl">
+              <img
+                src="/momin.jpg"
+                alt="Portrait of MD Momin Ali"
+                className="aspect-square w-full rounded-2xl object-cover object-top transition-transform duration-700 group-hover:scale-102"
+              />
+              <div className="mt-4 flex items-center justify-between px-2 font-mono text-[11px] text-body">
+                <span>MD MOMIN ALI</span>
+                <span className="text-emerald font-bold">• RAJSHAHI, BD</span>
               </div>
-            </TiltCard>
-          ))}
-        </Stagger>
-      </div>
+            </div>
+          </div>
 
-      <div className="mt-20">
-        <SectionHeading
-          badge="Services"
-          title="What I Can Do For You"
-          subtitle="From a first storefront to ads, leads and the back-end behind them."
-        />
-        <Stagger className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => (
-            <TiltCard key={service.title} accent="indigo">
-              <Check className="text-emerald" size={20} />
-              <h3 className="mt-3 text-base font-bold">{service.title}</h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-body">{service.body}</p>
-            </TiltCard>
-          ))}
-        </Stagger>
-        <Reveal delay={0.1} className="mt-8">
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-indigo hover:gap-4"
-          >
-            See packages & pricing <ArrowRight size={16} />
-          </Link>
-        </Reveal>
-      </div>
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-indigo/20 bg-indigo/10 px-3.5 py-1 font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+              • PROFILE &amp; PHILOSOPHY
+            </div>
 
-      <div className="mt-20">
-        <SectionHeading badge="Journey" title="Education & Experience" />
-        <div className="relative mt-8 space-y-5 border-l border-ink/15 pl-6">
-          {TIMELINE.map(({ icon: Icon, when, title, body }, i) => (
-            <Reveal key={title} from="left" delay={i * 0.08}>
-              <div className="surface-card relative p-5">
-                <span className="absolute -left-[2.15rem] top-6 grid size-5 place-items-center rounded-full bg-indigo text-cream">
-                  <Icon size={12} />
-                </span>
-                <p className="font-mono text-[11px] tracking-widest text-indigo">{when}</p>
-                <h3 className="mt-1 text-lg font-bold">{title}</h3>
-                <p className="mt-1 text-sm text-body">{body}</p>
+            <h1 className="font-monumental text-5xl tracking-tight text-ink sm:text-7xl">
+              ENGINEERING{" "}
+              <span className="font-editorial-italic text-indigo font-normal">
+                THAT SELLS.
+              </span>
+            </h1>
+
+            <p className="font-mono text-xs font-semibold tracking-wider text-indigo uppercase">
+              SHOPIFY DEVELOPER • FULL-STACK ENGINEER • DIGITAL MARKETER
+            </p>
+
+            <p className="text-base leading-relaxed text-body sm:text-lg">
+              I build Shopify storefronts and web applications designed around how humans actually discover and purchase. Front-end in React, TypeScript, and Tailwind; back-end in Node.js and MongoDB; paired with custom Shopify Liquid sections built to convert without heavy app bloat.
+            </p>
+
+            <p className="text-base leading-relaxed text-body">
+              Currently completing my final-year Computer Science degree at Varendra University in Rajshahi, Bangladesh, while shipping production storefronts for international brands across the UK, USA, Dubai, and Bangladesh.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                to="/works"
+                className="inline-flex items-center gap-2 rounded-full bg-indigo px-7 py-3 font-mono text-xs font-bold tracking-wider text-cream uppercase shadow-lg shadow-indigo/25 transition-transform hover:scale-105"
+              >
+                <span>EXPLORE WORKS</span>
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-6 py-3 font-mono text-xs font-bold tracking-wider text-ink uppercase transition-colors hover:border-indigo"
+              >
+                <span>GET IN TOUCH</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Capabilities Section */}
+        <div className="mt-28 border-t border-ink/10 pt-16">
+          <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+            • CORE CAPABILITIES
+          </p>
+          <h2 className="mt-2 font-monumental text-3xl tracking-tight text-ink sm:text-5xl">
+            WHAT I DELIVER FOR CLIENTS
+          </h2>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SKILLS.map(({ icon: Icon, title, body }) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-ink/10 bg-card p-6 shadow-sm transition-all hover:border-indigo/40 hover:shadow-lg"
+              >
+                <div className="flex size-10 items-center justify-center rounded-xl bg-indigo/10 text-indigo">
+                  <Icon size={20} />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-bold text-ink">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-body">{body}</p>
               </div>
-            </Reveal>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Tech Stack Groups */}
+        <div className="mt-28 border-t border-ink/10 pt-16">
+          <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+            • DAILY TOOLKIT
+          </p>
+          <h2 className="mt-2 font-monumental text-3xl tracking-tight text-ink sm:text-5xl">
+            TECHNICAL ARSENAL
+          </h2>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {SKILL_GROUPS.map((group) => (
+              <div
+                key={group.title}
+                className="rounded-2xl border border-ink/10 bg-card p-6 shadow-sm"
+              >
+                <h3 className="font-display text-lg font-bold text-ink">{group.title}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-lg border border-ink/10 bg-cream/70 px-3 py-1 font-mono text-xs text-body"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Education & Experience Timeline */}
+        <div className="mt-28 border-t border-ink/10 pt-16">
+          <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+            • JOURNEY &amp; CREDENTIALS
+          </p>
+          <h2 className="mt-2 font-monumental text-3xl tracking-tight text-ink sm:text-5xl">
+            CHRONOLOGY &amp; ACHIEVEMENTS
+          </h2>
+
+          <div className="mt-10 space-y-6">
+            {TIMELINE.map(({ icon: Icon, when, title, body }) => (
+              <div
+                key={title}
+                className="flex flex-col gap-4 rounded-2xl border border-ink/10 bg-card p-6 shadow-sm transition-all hover:border-indigo/40 sm:flex-row sm:items-start"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-indigo/10 text-indigo">
+                  <Icon size={20} />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
+                    <span className="font-bold text-indigo">{when}</span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-ink">{title}</h3>
+                  <p className="text-sm leading-relaxed text-body">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

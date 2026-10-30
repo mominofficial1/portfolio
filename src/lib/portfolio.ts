@@ -10,6 +10,7 @@ export const EMAIL = "232311005@vu.edu.bd";
 
 export const SOCIALS = {
   github: "https://github.com/mominofficial",
+  drive: "https://drive.google.com/drive/folders/1kCXA5lbp44P2t90yDaLO5-8eJDEYx3F3?usp=sharing",
   linkedin:
     "https://www.linkedin.com/in/md-momin-ali-3913b6351?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   instagram: "https://www.instagram.com/momin141016?igsh=amkxd29iNnZjNGk1",
@@ -62,7 +63,7 @@ export const PROJECTS: Project[] = [
     tag: "MOBILE & AI APP / CITIZEN TECH",
     description:
       "AI-powered citizen grocery budgeting and market price monitor app for Bangladesh with DAM Auto-Live government price benchmarks, Google Gemini AI budget optimization, and crowdsourced bazaar reporting.",
-    link: "https://github.com/mominofficial",
+    link: "https://drive.google.com/drive/folders/1kCXA5lbp44P2t90yDaLO5-8eJDEYx3F3?usp=sharing",
     status: "LIVE / ACTIVE",
     statusTone: "live",
     accent: "emerald",
@@ -99,7 +100,7 @@ export const PROJECTS: Project[] = [
     status: "LIVE",
     statusTone: "live",
     accent: "indigo",
-    image: chez.url,
+    image: "/projects/chez-provence.jpg",
     year: "2026",
     role: "Shopify Developer",
     overview:
@@ -123,7 +124,7 @@ export const PROJECTS: Project[] = [
     statusTone: "dev",
     accent: "indigo",
     note: "Store password: 123",
-    image: saltline.url,
+    image: "/projects/saltline.jpg",
     year: "2026",
     role: "Shopify Developer",
     overview:
@@ -146,7 +147,7 @@ export const PROJECTS: Project[] = [
     statusTone: "dev",
     accent: "indigo",
     note: "Contact for access",
-    image: glow.url,
+    image: "/projects/glow-beauty.jpg",
     year: "2026",
     role: "Full-Stack Developer",
     overview:
@@ -169,7 +170,7 @@ export const PROJECTS: Project[] = [
     status: "LIVE",
     statusTone: "live",
     accent: "indigo",
-    image: thames.url,
+    image: "/projects/thames-glow-beauty.jpg",
     year: "2026",
     role: "Shopify Developer",
     overview:
@@ -191,7 +192,7 @@ export const PROJECTS: Project[] = [
     status: "LIVE",
     statusTone: "live",
     accent: "emerald",
-    image: leadlux.url,
+    image: "/projects/leadlux.jpg",
     year: "2026",
     role: "Front-End Developer",
     overview:
@@ -213,7 +214,7 @@ export const PROJECTS: Project[] = [
     status: "ONGOING SERVICE",
     statusTone: "dev",
     accent: "emerald",
-    image: leadgen.url,
+    image: "/projects/lead-data.jpg",
     year: "2025 — present",
     role: "Lead Researcher",
     overview:

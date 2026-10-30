@@ -79,19 +79,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MD Momin Ali — Shopify Developer & Front-End Engineer" },
+      { title: "MD Momin Ali — Shopify Developer & Full-Stack Engineer" },
       {
         name: "description",
         content:
-          "Shopify developer, front-end engineer and digital marketer building fast, conversion-focused storefronts.",
+          "Portfolio of MD Momin Ali — Shopify Developer, Full-Stack Engineer, and Digital Marketer crafting high-impact storefronts and web apps.",
       },
       { name: "author", content: "MD Momin Ali" },
-      { property: "og:title", content: "MD Momin Ali — Shopify Developer" },
+      { property: "og:title", content: "MD Momin Ali — Shopify Developer & Full-Stack Engineer" },
       {
         property: "og:description",
-        content: "Custom Shopify storefronts, React interfaces and conversion-focused design.",
+        content: "Custom Shopify storefronts, React web apps, Gemini AI integrations and conversion systems.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://mominofficial.me" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -99,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap",
       },
       {
         rel: "stylesheet",
