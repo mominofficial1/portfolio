@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A2625"/>
+      <stop offset="60%" stop-color="#0F3534"/>
+      <stop offset="100%" stop-color="#061B1A"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(200, 157, 92, 0.08)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C89D5C"/>
+      <stop offset="100%" stop-color="#E5C287"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bgGrad)"/>
+  <rect width="1280" height="720" fill="url(#grid)"/>
+
+  <!-- Subtle Glow Elements -->
+  <circle cx="640" cy="340" r="280" fill="rgba(200, 157, 92, 0.05)" filter="blur(60px)"/>
+  <circle cx="1050" cy="180" r="180" fill="rgba(24, 119, 242, 0.12)" filter="blur(50px)"/>
+
+  <!-- Border Frame -->
+  <rect x="36" y="36" width="1208" height="648" rx="16" fill="none" stroke="rgba(200, 157, 92, 0.25)" stroke-width="1.5" stroke-dasharray="8 6"/>
+
+  <!-- Top Category Pill -->
+  <g transform="translate(640, 140)">
+    <rect x="-160" y="-22" width="320" height="44" rx="22" fill="rgba(10, 38, 37, 0.85)" stroke="#C89D5C" stroke-width="1.5"/>
+    <circle cx="-120" cy="0" r="5" fill="#C89D5C"/>
+    <text x="-95" y="6" fill="#F7F4EC" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="14" font-weight="700" letter-spacing="2">SOCIAL MEDIA MANAGEMENT</text>
+  </g>
+
+  <!-- Facebook Platform Icon -->
+  <g transform="translate(640, 240)">
+    <circle cx="0" cy="0" r="44" fill="#1877F2"/>
+    <path d="M7 16 V-2 H13 L15 -10 H7 V-15 C7 -17 8 -19 12 -19 H15 V-27 C14 -27 10 -27 7 -27 C-2 -27 -7 -22 -7 -12 V-2 H-14 V10 H-7 V30 H7 V10 Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Main Titles -->
+  <!-- Project Title -->
+  <text x="640" y="360" text-anchor="middle" fill="#FFFFFF" font-family="'Syne', 'Space Grotesk', -apple-system, sans-serif" font-size="44" font-weight="800" letter-spacing="-1">
+    Royal Hair Wigs
+  </text>
+  <text x="640" y="415" text-anchor="middle" fill="url(#goldGrad)" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="28" font-weight="700" letter-spacing="1">
+    Facebook Page Management
+  </text>
+
+  <!-- Placeholder Badge -->
+  <g transform="translate(640, 480)">
+    <rect x="-170" y="-18" width="340" height="36" rx="8" fill="rgba(200, 157, 92, 0.15)" stroke="rgba(200, 157, 92, 0.4)" stroke-width="1"/>
+    <text x="0" y="6" text-anchor="middle" fill="#E5C287" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="14" font-weight="600" letter-spacing="1.5">
+      [PROJECT COVER IMAGE PLACEHOLDER]
+    </text>
+  </g>
+
+  <!-- Subtitle Services -->
+  <text x="640" y="550" text-anchor="middle" fill="#A8C0BF" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="18" font-weight="500">
+    Product Research • Title &amp; Description Research • Post Design • Page Operations
+  </text>
+
+  <!-- Bottom Tagline -->
+  <text x="640" y="620" text-anchor="middle" fill="rgba(247, 244, 236, 0.5)" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="14" letter-spacing="1">
+    MD MOMIN ALI • PROFESSIONAL SOCIAL MEDIA PORTFOLIO
+  </text>
+</svg>

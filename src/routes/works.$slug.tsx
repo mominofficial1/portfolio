@@ -97,6 +97,30 @@ function ProjectDetail() {
               </a>
             ) : null}
 
+            {project.githubUrl ? (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/20 bg-card px-6 py-3 font-mono text-xs font-bold tracking-wider text-ink uppercase transition-colors hover:border-indigo hover:text-indigo"
+              >
+                <span>SOURCE CODE (GITHUB)</span>
+                <ArrowUpRight size={14} />
+              </a>
+            ) : null}
+
+            {project.apkUrl ? (
+              <a
+                href={project.apkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-emerald/30 bg-emerald/10 px-6 py-3 font-mono text-xs font-bold tracking-wider text-emerald uppercase transition-colors hover:bg-emerald hover:text-cream"
+              >
+                <span>DOWNLOAD ANDROID APK</span>
+                <ArrowUpRight size={14} />
+              </a>
+            ) : null}
+
             {project.note ? (
               <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-4 py-2.5 font-mono text-xs text-body">
                 <Lock size={13} className="text-coral" /> {project.note}
@@ -197,6 +221,55 @@ function ProjectDetail() {
                   </li>
                 ))}
               </ul>
+            )}
+
+            {project.deliverables && project.deliverables.length > 0 && (
+              <div className="rounded-2xl border border-ink/10 bg-card p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+                  DELIVERABLES &amp; OUTPUTS
+                </p>
+                <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {project.deliverables.map((d, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-xs font-medium text-body">
+                      <span className="size-1.5 rounded-full bg-indigo" />
+                      <span>{d}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {project.problem && (
+              <div className="rounded-2xl border border-ink/10 bg-card p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-coral uppercase">
+                  THE CHALLENGE &amp; PROBLEM
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.problem}
+                </p>
+              </div>
+            )}
+
+            {project.strategy && (
+              <div className="rounded-2xl border border-indigo/20 bg-indigo/5 p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+                  STRATEGY &amp; IMPLEMENTATION
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.strategy}
+                </p>
+              </div>
+            )}
+
+            {project.result && (
+              <div className="rounded-2xl border border-emerald/20 bg-emerald/5 p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-emerald uppercase">
+                  VERIFIED RESULTS &amp; IMPACT
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.result}
+                </p>
+              </div>
             )}
 
             <div className="rounded-2xl border border-indigo/20 bg-indigo/5 p-6">

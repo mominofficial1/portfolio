@@ -32,7 +32,10 @@ function WorksPage() {
     { id: "app", label: "MOBILE & AI APPS", count: PROJECTS.filter((p) => p.category === "app").length },
     { id: "shopify", label: "SHOPIFY STOREFRONTS", count: PROJECTS.filter((p) => p.category === "shopify").length },
     { id: "web", label: "WEB PLATFORMS", count: PROJECTS.filter((p) => p.category === "web").length },
-    { id: "growth", label: "DIGITAL MARKETING & DATA", count: PROJECTS.filter((p) => p.category === "growth").length },
+    { id: "gmc", label: "GOOGLE MERCHANT & SHOPPING", count: PROJECTS.filter((p) => p.category === "gmc").length },
+    { id: "branding", label: "CREATIVE & VIDEO / NASA", count: PROJECTS.filter((p) => p.category === "branding").length },
+    { id: "growth", label: "B2B LEADS & DATA", count: PROJECTS.filter((p) => p.category === "growth").length },
+    { id: "social", label: "SOCIAL MEDIA MANAGEMENT", count: PROJECTS.filter((p) => p.category === "social").length },
   ];
 
   const displayedProjects =
