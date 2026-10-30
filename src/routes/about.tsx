@@ -94,15 +94,15 @@ function AboutPage() {
             </h1>
 
             <p className="font-mono text-xs font-semibold tracking-wider text-indigo uppercase">
-              SHOPIFY DEVELOPER • FULL-STACK ENGINEER • DIGITAL MARKETER
+              SHOPIFY DEVELOPER • FULL-STACK ENGINEER • AI CONTENT SPECIALIST
             </p>
 
             <p className="text-base leading-relaxed text-body sm:text-lg">
-              I build Shopify storefronts and web applications designed around how humans actually discover and purchase. Front-end in React, TypeScript, and Tailwind; back-end in Node.js and MongoDB; paired with custom Shopify Liquid sections built to convert without heavy app bloat.
+              I architect high-converting Shopify storefronts and modern web applications. Combining computer science rigor with AI content workflows, I build fast, conversion-driven digital systems that scale without bloat.
             </p>
 
-            <p className="text-base leading-relaxed text-body">
-              Currently completing my final-year Computer Science degree at Varendra University in Rajshahi, Bangladesh, while shipping production storefronts for international brands across the UK, USA, Dubai, and Bangladesh.
+            <p className="text-sm font-mono text-body">
+              Based in Rajshahi, Bangladesh — shipping production storefronts and platforms worldwide.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">

@@ -33,16 +33,16 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MD Momin Ali — Shopify Developer, Full-Stack Engineer & Creative Director" },
+      { title: "MD Momin Ali — Shopify Developer & AI Content Specialist" },
       {
         name: "description",
         content:
-          "Portfolio of MD Momin Ali — Shopify Liquid Specialist, Full-Stack Engineer, and Creative Video/Motion Director based in Rajshahi, Bangladesh.",
+          "Portfolio of MD Momin Ali — Shopify Developer, AI Content Specialist, and Creative Director based in Rajshahi, Bangladesh.",
       },
-      { property: "og:title", content: "MD Momin Ali — Shopify Developer & Full-Stack Engineer" },
+      { property: "og:title", content: "MD Momin Ali — Shopify Developer & AI Content Specialist" },
       {
         property: "og:description",
-        content: "Custom Shopify storefronts, React web apps, Gemini AI integrations, and high-conversion systems.",
+        content: "Custom Shopify storefronts, AI content workflows, React web apps, and high-conversion systems.",
       },
       { property: "og:url", content: "https://mominofficial.me" },
     ],
@@ -53,17 +53,17 @@ export const Route = createFileRoute("/")({
 // Curated capability items for kinetic showcase
 const CAPABILITIES = [
   { name: "SHOPIFY LIQUID", category: "shopify", level: "CORE EXPERTISE", size: "huge" },
+  { name: "AI CONTENT WORKFLOWS", category: "fullstack", level: "LLMs & GENERATIVE AI", size: "huge" },
   { name: "REACT.JS & NEXT.JS", category: "frontend", level: "PRODUCTION", size: "large" },
   { name: "TAILWIND CSS", category: "frontend", level: "DAILY DRIVER", size: "medium" },
   { name: "NODE.JS / REST API", category: "fullstack", level: "BACKEND ARCHITECTURE", size: "large" },
   { name: "TYPESCRIPT", category: "frontend", level: "TYPE-SAFE SYSTEMS", size: "medium" },
-  { name: "GEMINI AI API", category: "fullstack", level: "INTELLIGENCE & LLMs", size: "huge" },
+  { name: "GEMINI AI API", category: "fullstack", level: "INTELLIGENCE & AGENTS", size: "huge" },
   { name: "GOOGLE MERCHANT", category: "marketing", level: "100% COMPLIANCE", size: "huge" },
   { name: "AFTER EFFECTS", category: "creative", level: "3D MOTION & HUDS", size: "large" },
   { name: "FLUTTER & DART", category: "fullstack", level: "CROSS-PLATFORM APPS", size: "medium" },
-  { name: "PERFORMANCE TUNING", category: "shopify", level: "95+ LIGHTHOUSE SPEED", size: "large" },
+  { name: "PERFORMANCE TUNING", category: "shopify", level: "95+ SPEED SCORES", size: "large" },
   { name: "CONVERSION CRO", category: "shopify", level: "REVENUE OPTIMIZATION", size: "huge" },
-  { name: "PREMIERE PRO", category: "creative", level: "COMMERCIAL VIDEO ADS", size: "medium" },
 ];
 
 const CHAPTERS = [
@@ -75,11 +75,11 @@ const CHAPTERS = [
     period: "2022 — 2026",
     location: "Rajshahi, Bangladesh",
     description:
-      "Rigorous foundations in algorithms, data structures, software engineering patterns, and distributed web architecture.",
+      "Core software engineering, algorithms, AI architectures, and high-performance citizen platforms.",
     highlights: [
       "NASA Space Apps 2025: 2nd Runner Up & Global Nominee (Team AstroVenture)",
-      "Thesis focus on AI-assisted full-stack architectures & citizen web systems",
-      "Lead developer for university hackathons & software project showcases",
+      "Thesis on applied AI workflows & citizen software architectures",
+      "Lead developer for university hackathons & software showcases",
     ],
   },
   {
@@ -90,26 +90,26 @@ const CHAPTERS = [
     period: "2024 — PRESENT",
     location: "Global Remote",
     description:
-      "Engineering bespoke Shopify Liquid storefronts, custom sections, and conversion funnels for décor, luxury, beauty, and D2C brands worldwide.",
+      "Engineering bespoke Shopify storefronts, custom sections, and conversion funnels for international brands.",
     highlights: [
-      "35+ verified production projects shipped with zero latency",
-      "Google Merchant Center compliance & account suspension recovery",
-      "Custom metafield architecture, cart drawers, and bespoke FAQ accordions",
+      "35+ verified production projects shipped globally",
+      "Google Merchant Center compliance & suspension recovery",
+      "Custom metafield architecture, cart drawers, and speed tuning",
     ],
   },
   {
     id: "03",
     tag: "CREATIVE & VIDEO",
-    title: "MOTION & VISUAL DIRECTION",
-    role: "Creative Video Editor & Motion Designer",
+    title: "AI CONTENT & MOTION",
+    role: "Creative Director & Motion Specialist",
     period: "2023 — PRESENT",
     location: "Global Remote",
     description:
-      "Directing high-retention commercial video ads, 3D telemetry animations, and comprehensive visual identity packages.",
+      "Directing AI-driven visual content, 3D telemetry animations, and high-retention commercial ad campaigns.",
     highlights: [
-      "Orbital telemetry & space HUD graphics for NASA award-winning project",
-      "Luxury branding and editorial catalog design for RoyLux & D2C brands",
-      "UGC commercial ad editing producing high ROAS across paid media",
+      "Orbital telemetry & space HUD graphics for NASA award project",
+      "Luxury branding and editorial design for RoyLux & D2C brands",
+      "Commercial video ads engineered for high ROAS on paid media",
     ],
   },
 ];
@@ -118,9 +118,9 @@ const CHAPTERS = [
 const HOMEPAGE_CATEGORIES = [
   { id: "shopify", label: "SHOPIFY STOREFRONTS", subtitle: "Bespoke Liquid themes, custom sections & high-conversion D2C stores" },
   { id: "app", label: "MOBILE & AI APPS", subtitle: "Gemini AI integrations, Flutter apps & citizen tools" },
-  { id: "web", label: "WEB PLATFORMS", subtitle: "Full-stack React, Next.js, invoice generators & bespoke portals" },
-  { id: "gmc", label: "GOOGLE MERCHANT & SHOPPING", subtitle: "Feed optimization, suspension recovery & shopping campaigns" },
-  { id: "branding", label: "CREATIVE & NASA / VIDEO", subtitle: "NASA Space Apps 2025, luxury branding & high-retention video" },
+  { id: "web", label: "WEB PLATFORMS", subtitle: "Full-stack React, Next.js portals & web applications" },
+  { id: "gmc", label: "GOOGLE MERCHANT & SHOPPING", subtitle: "Feed optimization, suspension recovery & shopping ads" },
+  { id: "branding", label: "CREATIVE & NASA / VIDEO", subtitle: "NASA Space Apps 2025, luxury branding & commercial video" },
   { id: "growth", label: "GROWTH DATA & LEADS", subtitle: "B2B prospecting, data scraping & verified decision-maker pipelines" },
   { id: "social", label: "SOCIAL MEDIA MANAGEMENT", subtitle: "YouTube channel direction, Facebook/Instagram growth & viral reach" },
 ];
@@ -162,13 +162,13 @@ function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-cream text-ink">
       {/* ========================================================================
-          1. CINEMATIC HERO SECTION (Warm Cream #F0EDCC + Deep Teal #02343F)
+          1. CINEMATIC HERO SECTION (Layered Editorial PNG Portrait Composition)
           ======================================================================== */}
-      <section className="relative flex min-h-[96vh] w-full flex-col justify-between overflow-hidden bg-cream pt-28 pb-10 text-ink">
-        {/* Ambient Subtle Architectural Gradients */}
+      <section className="relative flex min-h-[96vh] w-full flex-col justify-between overflow-hidden bg-cream pt-28 pb-8 text-ink">
+        {/* Subtle Ambient Halos */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-1/3 size-[750px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo/5 blur-3xl" />
-          <div className="absolute right-10 top-20 size-[450px] rounded-full bg-emerald/5 blur-3xl" />
+          <div className="absolute left-1/2 top-1/4 size-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo/5 blur-3xl" />
+          <div className="absolute right-12 top-24 size-[400px] rounded-full bg-emerald/5 blur-3xl" />
         </div>
 
         {/* Top Status Bar Inside Hero */}
@@ -187,78 +187,59 @@ function Home() {
           </span>
         </div>
 
-        {/* Massive Editorial Backdrop Typography */}
-        <div className="relative z-10 mx-auto mt-6 flex w-full max-w-7xl flex-col items-center justify-center text-center select-none px-4">
+        {/* Layer 1 & 2: Massive Backdrop Typography with Overlapping PNG Portrait */}
+        <div className="relative mx-auto mt-6 flex w-full max-w-7xl flex-col items-center justify-center text-center select-none px-4">
+          {/* Eyebrow with explicit "Shopify Developer & AI Content Specialist" */}
           <motion.p
-            initial={{ opacity: 0, y: -15 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-mono text-xs font-bold tracking-[0.3em] text-indigo uppercase sm:text-sm lg:text-base"
+            transition={{ duration: 0.7 }}
+            className="relative z-10 font-mono text-xs font-bold tracking-[0.28em] text-indigo uppercase sm:text-sm lg:text-base"
           >
-            ✦ SHOPIFY DEVELOPER &amp; FULL-STACK ENGINEER ✦
+            ✦ SHOPIFY DEVELOPER &amp; AI CONTENT SPECIALIST ✦
           </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-2 w-full text-center font-monumental leading-[0.82] text-ink tracking-tight"
-            style={{ fontSize: "clamp(3.8rem, 15vw, 14.5rem)" }}
-          >
-            DEVELOPER
-          </motion.h1>
-        </div>
 
-        {/* Center Focal Point: Momin's Authentic Portrait Overlapping Text */}
-        <div className="relative z-20 mx-auto -mt-6 sm:-mt-10 mb-6 flex flex-col items-center justify-center px-4">
-          <div className="relative w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[430px]">
-            {/* Ambient Behind-Portrait Glow */}
-            <div className="pointer-events-none absolute -inset-6 rounded-full bg-indigo/10 blur-2xl opacity-60" />
-
-            {/* Editorial Framed Composition */}
-            <motion.div
-              initial={{ opacity: 0, y: 35, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-              className="relative overflow-hidden rounded-3xl border border-ink/15 bg-card/90 p-2.5 shadow-2xl backdrop-blur-md"
+          {/* Massive Dominant Typography Layer (Sits behind the portrait) */}
+          <div className="relative z-10 mt-1 w-full text-center">
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              className="font-monumental leading-[0.82] text-ink tracking-tight select-none"
+              style={{ fontSize: "clamp(3.8rem, 15vw, 14.5rem)" }}
             >
-              <div className="overflow-hidden rounded-2xl relative aspect-[4/4.7] bg-cream">
-                <img
-                  src="/momin-hero-cutout.png"
-                  alt="MD Momin Ali — Shopify Developer & Full-Stack Engineer"
-                  className="size-full object-cover object-[center_15%] filter contrast-[1.03] transition-transform duration-700 hover:scale-105"
-                  onError={(e) => {
-                    // Fallback to formal portrait if cutout fails
-                    (e.target as HTMLImageElement).src = "/momin-hero-portrait.jpg";
-                  }}
-                />
-                {/* Subtle vignette gradient over bottom edge */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-card via-card/50 to-transparent" />
-              </div>
+              DEVELOPER
+            </motion.h1>
+          </div>
 
-              {/* Editorial Monogram Overlay at Bottom of Card */}
-              <div className="absolute inset-x-5 bottom-5 z-30 rounded-xl border border-ink/10 bg-cream/95 px-4 py-2.5 text-center shadow-lg backdrop-blur-md">
-                <p className="font-mono text-[9px] font-bold tracking-[0.25em] text-body uppercase">
-                  MD • MOMIN ALI
-                </p>
-                <p className="font-mono text-[10px] font-bold tracking-wider text-indigo uppercase">
-                  SHOPIFY LIQUID • FULL-STACK • CREATIVE SYSTEMS
-                </p>
-              </div>
+          {/* Layer 3: Foreground Transparent PNG Portrait (Overlaps the typography naturally) */}
+          <div className="relative z-20 -mt-16 sm:-mt-24 md:-mt-32 lg:-mt-40 xl:-mt-48 flex justify-center pointer-events-none">
+            <motion.div
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+              className="relative flex justify-center"
+            >
+              <img
+                src="/momin-hero-cutout.png"
+                alt="MD Momin Ali — Shopify Developer & AI Content Specialist"
+                className="h-[380px] sm:h-[480px] md:h-[560px] lg:h-[640px] xl:h-[700px] w-auto max-w-[92vw] object-contain select-none filter drop-shadow-[0_20px_30px_rgba(2,52,63,0.12)] [mask-image:linear-gradient(to_bottom,black_86%,transparent_100%)]"
+              />
             </motion.div>
           </div>
         </div>
 
-        {/* Narrative Columns & CTAs */}
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl items-end gap-6 px-6 sm:grid-cols-2">
+        {/* Layer 4: Supporting Narrative Columns & CTAs */}
+        <div className="relative z-30 mx-auto -mt-6 sm:-mt-10 grid w-full max-w-7xl items-end gap-6 px-6 sm:grid-cols-2">
           {/* Left Column: Mission & Craft */}
           <motion.div
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.45, duration: 0.8 }}
             className="flex flex-col space-y-2 text-ink"
           >
             <p className="font-mono text-[10px] font-bold tracking-widest text-indigo uppercase">
-              01 / A DIFFERENT KIND OF CRAFT
+              01 / CRAFT &amp; EXECUTION
             </p>
             <div className="font-monumental text-3xl leading-[0.9] text-ink sm:text-5xl lg:text-6xl">
               IDEAS{" "}
@@ -274,7 +255,7 @@ function Home() {
           <motion.div
             initial={{ opacity: 0, x: 25 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.55, duration: 0.8 }}
             className="flex flex-col space-y-2 font-mono text-[11px] text-ink sm:text-right"
           >
             <p className="tracking-widest text-indigo font-bold uppercase">
@@ -298,7 +279,7 @@ function Home() {
         </div>
 
         {/* Bottom Hero Control Bar */}
-        <div className="relative z-10 mx-auto mt-8 flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-ink/10 px-6 pt-5 font-mono text-xs text-body">
+        <div className="relative z-30 mx-auto mt-8 flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-ink/10 px-6 pt-5 font-mono text-xs text-body">
           <div className="flex items-center gap-3">
             <span className="size-2 rounded-full bg-emerald" />
             <span className="font-bold text-ink">001 / CREATIVE DIRECTORY</span>
@@ -337,14 +318,14 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          2. BRIEF EDITORIAL INTRO
+          2. CONCISE EDITORIAL INTRO (Reduced Text)
           ======================================================================== */}
-      <section className="relative border-t border-ink/10 bg-cream px-6 py-20 text-ink">
+      <section className="relative border-t border-ink/10 bg-cream px-6 py-16 text-ink">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1fr_2fr] items-start">
             <div>
               <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
-                • THE APPROACH &amp; PHILOSOPHY
+                • APPROACH &amp; PHILOSOPHY
               </p>
               <h2 className="mt-2 font-monumental text-3xl tracking-tight text-ink sm:text-4xl">
                 ENGINEERING{" "}
@@ -355,19 +336,19 @@ function Home() {
             </div>
             <div className="space-y-4 font-mono text-sm leading-relaxed text-body sm:text-base">
               <p>
-                Bridging computer science rigor with high-conversion e-commerce execution. As an active developer and creative director, I engineer digital platforms that solve real business friction: high-speed Shopify Liquid architectures, zero-latency web platforms, and compliant Google Merchant integrations.
+                Bridging computer science rigor with high-conversion e-commerce execution. I architect bespoke Shopify Liquid storefronts, AI content workflows, and compliant Google Merchant integrations designed to drive conversions without app bloat.
               </p>
-              <div className="flex flex-wrap gap-4 pt-2">
-                <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-3.5 py-1 text-xs font-semibold text-ink">
+              <div className="flex flex-wrap gap-3 pt-1">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-card px-3 py-1 text-xs font-semibold text-ink">
                   <Check size={13} className="text-emerald" /> Custom Liquid Themes
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-3.5 py-1 text-xs font-semibold text-ink">
-                  <Check size={13} className="text-emerald" /> Gemini AI Solutions
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-card px-3 py-1 text-xs font-semibold text-ink">
+                  <Check size={13} className="text-emerald" /> AI Content Workflows
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-3.5 py-1 text-xs font-semibold text-ink">
-                  <Check size={13} className="text-emerald" /> Google Merchant Recovery
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-card px-3 py-1 text-xs font-semibold text-ink">
+                  <Check size={13} className="text-emerald" /> GMC Recovery
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-3.5 py-1 text-xs font-semibold text-ink">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-card px-3 py-1 text-xs font-semibold text-ink">
                   <Check size={13} className="text-emerald" /> Motion &amp; Commercial Video
                 </span>
               </div>
@@ -379,16 +360,7 @@ function Home() {
       {/* ========================================================================
           3. CAPABILITIES / SKILLS TYPOGRAPHY SECTION (Deep Teal #02343F Background)
           ======================================================================== */}
-      <section className="relative border-y border-ink/10 bg-ink px-6 py-24 text-cream">
-        {/* Subtle decorative code watermark */}
-        <div className="pointer-events-none absolute inset-0 opacity-10 overflow-hidden font-mono text-[9px] text-cream/30 leading-tight select-none">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <p key={i} className="whitespace-nowrap">
-              std::vector&lt;LiquidStorefront&gt; components; void render(Shopify::Theme &amp;theme) &#123; gemini.optimize(); return conversion_rate &gt; 3.8; &#125; /* MOMIN OFFICIAL PORTFOLIO 2026 */
-            </p>
-          ))}
-        </div>
-
+      <section className="relative border-y border-ink/10 bg-ink px-6 py-20 text-cream">
         <div className="relative mx-auto max-w-7xl">
           {/* Top Section Header */}
           <div className="flex flex-wrap items-end justify-between gap-4 border-b border-cream/15 pb-6">
@@ -416,7 +388,7 @@ function Home() {
               { id: "all", label: "ALL DISCIPLINES", count: "12" },
               { id: "shopify", label: "SHOPIFY & LIQUID", count: "03" },
               { id: "frontend", label: "FRONTEND & REACT", count: "03" },
-              { id: "fullstack", label: "BACKEND & MOBILE", count: "03" },
+              { id: "fullstack", label: "AI & BACKEND", count: "03" },
               { id: "marketing", label: "GMC & CRO", count: "02" },
               { id: "creative", label: "MOTION & VIDEO", count: "02" },
             ].map((cat) => (
@@ -439,7 +411,7 @@ function Home() {
           </div>
 
           {/* Oversized Kinetic Typography Cloud Display */}
-          <div className="relative mt-12 flex min-h-[360px] flex-wrap items-center justify-center gap-x-10 gap-y-6 rounded-3xl border border-cream/15 bg-cream/[0.04] p-8 text-center backdrop-blur-sm sm:min-h-[420px]">
+          <div className="relative mt-10 flex min-h-[320px] flex-wrap items-center justify-center gap-x-10 gap-y-6 rounded-3xl border border-cream/15 bg-cream/[0.04] p-8 text-center backdrop-blur-sm sm:min-h-[380px]">
             {filteredSkills.map((skill, idx) => {
               const isHighlight = idx === activeSkillIndex;
               return (
@@ -457,9 +429,9 @@ function Home() {
                   <p
                     className={cn(
                       "font-monumental tracking-tight transition-all duration-300",
-                      skill.size === "huge" && "text-4xl sm:text-7xl lg:text-8xl",
-                      skill.size === "large" && "text-3xl sm:text-5xl lg:text-6xl",
-                      skill.size === "medium" && "text-2xl sm:text-4xl lg:text-5xl",
+                      skill.size === "huge" && "text-3xl sm:text-6xl lg:text-7xl",
+                      skill.size === "large" && "text-2xl sm:text-4xl lg:text-5xl",
+                      skill.size === "medium" && "text-xl sm:text-3xl lg:text-4xl",
                       isHighlight
                         ? "text-cream drop-shadow-[0_0_25px_rgba(240,237,204,0.4)]"
                         : "text-cream/40 group-hover:text-cream/80",
@@ -530,13 +502,13 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          4. SELECTED WORK BY CATEGORY (2-3 per category + "See More" link)
+          4. CINEMATIC PROJECT SHOWCASE (Asymmetric, Floating, Animated)
           ======================================================================== */}
-      <section className="relative mx-auto max-w-7xl px-6 py-28">
-        {/* Giant Architectural Watermark */}
-        <div className="pointer-events-none absolute inset-x-0 top-1/3 -z-10 flex justify-center opacity-[0.03] select-none">
-          <p className="font-monumental text-[18vw] leading-none text-ink">
-            ARCHIVE
+      <section className="relative mx-auto max-w-7xl px-6 py-28 overflow-hidden">
+        {/* Giant Architectural Watermark Typography */}
+        <div className="pointer-events-none absolute inset-x-0 top-1/4 -z-10 flex justify-center opacity-[0.035] select-none">
+          <p className="font-monumental text-[20vw] leading-none text-ink">
+            SELECTED
           </p>
         </div>
 
@@ -544,9 +516,9 @@ function Home() {
         <div className="flex flex-wrap items-end justify-between gap-6 border-b border-ink/10 pb-8">
           <div>
             <p className="font-mono text-[11px] font-bold tracking-widest text-indigo uppercase">
-              • 03 / CATEGORY-BY-CATEGORY SHOWCASE
+              • 03 / CINEMATIC WORK REPOSITORY
             </p>
-            <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl">
+            <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl lg:text-7xl">
               SELECTED{" "}
               <span className="font-editorial-italic text-indigo font-normal">
                 WORKS
@@ -556,16 +528,16 @@ function Home() {
           <div className="max-w-md font-mono text-xs text-body sm:text-right">
             <p className="font-bold text-ink">{PROJECTS.length} PRODUCTION SHIPS ACROSS 7 DISCIPLINES</p>
             <p className="mt-1">
-              Curated preview of 2–3 featured projects per domain. Explore full archives via dedicated category links.
+              Curated previews in floating editorial perspective. Explore full case studies via dedicated category links.
             </p>
           </div>
         </div>
 
-        {/* Categories Loop */}
-        <div className="mt-16 space-y-24">
+        {/* Categories Loop with Asymmetric Floating Compositions */}
+        <div className="mt-16 space-y-28">
           {HOMEPAGE_CATEGORIES.map((cat, catIdx) => {
             const categoryProjects = PROJECTS.filter((p) => p.category === cat.id);
-            // Sort to prioritize featured projects, then slice top 2
+            // Sort to prioritize featured projects, then take top 2
             const topProjects = [...categoryProjects]
               .sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
               .slice(0, 2);
@@ -573,7 +545,7 @@ function Home() {
             if (categoryProjects.length === 0) return null;
 
             return (
-              <div key={cat.id} className="border-t border-ink/10 pt-10">
+              <div key={cat.id} className="border-t border-ink/10 pt-12">
                 {/* Category Header Bar */}
                 <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
                   <div>
@@ -599,16 +571,45 @@ function Home() {
                   </Link>
                 </div>
 
-                {/* 2 Featured Projects in this category */}
-                <div className="grid gap-8 md:grid-cols-2">
-                  {topProjects.map((project, idx) => (
-                    <ProjectCard
-                      key={project.slug}
-                      project={project}
-                      index={idx}
-                      total={topProjects.length}
-                    />
-                  ))}
+                {/* Asymmetric Floating Project Composition (2 Featured Projects) */}
+                <div className="relative mt-8 flex flex-col md:flex-row md:items-start gap-8 lg:gap-12">
+                  {/* Primary Asymmetric Panel (Left, subtle negative tilt on desktop) */}
+                  {topProjects[0] && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 25 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                      className="w-full md:w-[58%] transform-gpu transition-all duration-700 md:-rotate-[1.2deg] md:hover:rotate-0 md:hover:scale-[1.015] z-10 hover:z-20"
+                    >
+                      <ProjectCard
+                        project={topProjects[0]}
+                        index={0}
+                        total={categoryProjects.length}
+                        variant="cinematic"
+                        className="shadow-xl shadow-black/5"
+                      />
+                    </motion.div>
+                  )}
+
+                  {/* Floating Counterpoint Panel (Right, offset vertically, subtle positive tilt) */}
+                  {topProjects[1] && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 35 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+                      className="w-full md:w-[48%] md:-ml-[6%] md:mt-16 lg:mt-24 transform-gpu transition-all duration-700 md:rotate-[1.5deg] md:hover:rotate-0 md:hover:scale-[1.015] z-15 hover:z-30"
+                    >
+                      <ProjectCard
+                        project={topProjects[1]}
+                        index={1}
+                        total={categoryProjects.length}
+                        variant="cinematic"
+                        className="shadow-2xl shadow-black/10"
+                      />
+                    </motion.div>
+                  )}
                 </div>
               </div>
             );
@@ -616,7 +617,7 @@ function Home() {
         </div>
 
         {/* Global CTA to Full Archive */}
-        <div className="mt-20 rounded-3xl border border-ink/15 bg-card p-10 text-center shadow-xl sm:p-14">
+        <div className="mt-24 rounded-3xl border border-ink/15 bg-card p-10 text-center shadow-xl sm:p-14">
           <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
             COMPLETE VERIFIED REPOSITORY
           </p>
@@ -641,7 +642,7 @@ function Home() {
       {/* ========================================================================
           5. FEATURED CLIENT WORK SPOTLIGHT (Deep Teal #02343F Background)
           ======================================================================== */}
-      <section className="relative overflow-hidden border-y border-ink/10 bg-ink py-24 text-cream">
+      <section className="relative overflow-hidden border-y border-ink/10 bg-ink py-20 text-cream">
         {/* Continuous Marquee Ticker */}
         <div className="border-b border-cream/10 bg-cream/5 py-3 font-mono text-xs tracking-widest text-cream/70 uppercase overflow-hidden">
           <div className="marquee-scroll flex gap-8">
@@ -658,13 +659,12 @@ function Home() {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 max-w-7xl px-6">
+        <div className="mx-auto mt-14 max-w-7xl px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left: Device Mockup Presentation */}
             <div className="relative group">
               <div className="absolute -inset-4 rounded-3xl bg-indigo/20 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative overflow-hidden rounded-2xl border border-cream/20 bg-card p-3 shadow-2xl backdrop-blur-xl">
-                {/* Header status on frame */}
                 <div className="flex items-center justify-between border-b border-cream/10 pb-2 px-2 font-mono text-[10px] text-cream/70">
                   <span>SPOTLIGHT CASE STUDY • {spotlightProject.slug.toUpperCase()}</span>
                   <span className="flex items-center gap-1.5 text-emerald font-semibold">
@@ -679,13 +679,12 @@ function Home() {
                 />
               </div>
 
-              {/* Floating Badge Stamp */}
               <div className="absolute -bottom-5 -right-4 rounded-full border border-cream/20 bg-ink px-4 py-2 font-mono text-[10px] font-bold tracking-wider text-cream uppercase shadow-xl">
                 NASA GLOBAL NOMINEE • VERIFIED CASE STUDY
               </div>
             </div>
 
-            {/* Right: Editorial Narrative */}
+            {/* Right: Editorial Narrative (Clean & Minimal) */}
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/10 px-3 py-1 font-mono text-[10px] font-bold tracking-widest text-indigo-300 uppercase">
                 SPOTLIGHT CHAPTER • {spotlightProject.tag}
@@ -703,7 +702,7 @@ function Home() {
               </h3>
 
               <p className="text-base leading-relaxed text-cream/75">
-                {spotlightProject.overview ?? spotlightProject.description}
+                AI-powered precision agriculture and orbital telemetry platform, recognized globally at NASA Space Apps Challenge 2025.
               </p>
 
               {spotlightProject.highlights && (
@@ -717,7 +716,7 @@ function Home() {
                 </ul>
               )}
 
-              <div className="flex flex-wrap items-center gap-4 pt-4">
+              <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   to="/works/$slug"
                   params={{ slug: spotlightProject.slug }}
@@ -747,7 +746,7 @@ function Home() {
       {/* ========================================================================
           6. MORE CREATIVE WORK (BEHANCE SECTION)
           ======================================================================== */}
-      <section className="relative overflow-hidden border-b border-ink/10 bg-cream py-24 text-ink">
+      <section className="relative overflow-hidden border-b border-ink/10 bg-cream py-20 text-ink">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="flex flex-wrap items-end justify-between gap-6 border-b border-ink/10 pb-8">
             <div>
@@ -771,12 +770,12 @@ function Home() {
           </div>
 
           {/* Behance Feature Grid */}
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 title: "NASA Space Apps 2025",
                 tag: "VIDEO EDITING & 3D MOTION",
-                desc: "Cinematic space agriculture showcase & orbital telemetry HUD graphics.",
+                desc: "Orbital telemetry HUD graphics & space agricultural showcase.",
                 badge: "2nd Runner Up",
               },
               {
@@ -788,13 +787,13 @@ function Home() {
               {
                 title: "Shopify D2C Storefronts",
                 tag: "E-COMMERCE UI/UX",
-                desc: "Conversion-optimized Liquid themes, custom product pages & speed tuning.",
+                desc: "Conversion-optimized Liquid themes & bespoke product pages.",
                 badge: "8+ Storefronts",
               },
               {
                 title: "Commercial UGC & Ads",
                 tag: "AFTER EFFECTS & PREMIERE",
-                desc: "High-retention social ads, kinetic typography, and multi-track sound design.",
+                desc: "High-retention social ads, kinetic typography, and sound design.",
                 badge: "Commercial Ads",
               },
             ].map((card, i) => (
@@ -832,7 +831,7 @@ function Home() {
           </div>
 
           {/* Central Behance Profile CTA Banner */}
-          <div className="mt-12 flex flex-col items-center justify-between gap-6 rounded-3xl border border-ink/15 bg-card p-8 text-center shadow-lg sm:flex-row sm:text-left">
+          <div className="mt-10 flex flex-col items-center justify-between gap-6 rounded-3xl border border-ink/15 bg-card p-8 text-center shadow-lg sm:flex-row sm:text-left">
             <div>
               <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
                 CREATIVE DIRECTION &amp; VISUAL PORTFOLIO
@@ -841,7 +840,7 @@ function Home() {
                 EXPLORE COMPLETE CASE STUDIES ON BEHANCE
               </h3>
               <p className="mt-1 text-sm text-body">
-                Discover in-depth visual presentations, design workflows, and motion reels.
+                Discover visual identity presentations, behind-the-scenes workflows, and motion reels.
               </p>
             </div>
             <a
@@ -858,13 +857,13 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          7. AUTHENTIC CLIENT REVIEWS & TESTIMONIALS
+          7. AUTHENTIC CLIENT REVIEWS (Clean & Focused)
           ======================================================================== */}
-      <section className="relative mx-auto max-w-7xl px-6 py-28">
+      <section className="relative mx-auto max-w-7xl px-6 py-24">
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-ink/10 pb-6">
           <div>
             <p className="font-mono text-[11px] font-bold tracking-widest text-indigo uppercase">
-              • 05 / CLIENT VALIDATION &amp; TESTIMONIALS
+              • 05 / CLIENT VALIDATION
             </p>
             <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl">
               TRUSTED BY{" "}
@@ -878,7 +877,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
           {REVIEWS.map((review, idx) => (
             <div
               key={idx}
@@ -895,7 +894,7 @@ function Home() {
                 </p>
               </div>
 
-              <div className="mt-8 border-t border-ink/10 pt-5">
+              <div className="mt-6 border-t border-ink/10 pt-4">
                 <p className="font-display text-base font-bold text-ink">
                   {review.author}
                 </p>
@@ -912,13 +911,13 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          8. PROFESSIONAL CHAPTERS & JOURNEY
+          8. PROFESSIONAL CHAPTERS & MILESTONES (Concise)
           ======================================================================== */}
-      <section className="relative mx-auto max-w-7xl px-6 py-12">
+      <section className="relative mx-auto max-w-7xl px-6 py-10">
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-ink/10 pb-6">
           <div>
             <p className="font-mono text-[11px] font-bold tracking-widest text-indigo uppercase">
-              • 06 / CAREER TIMELINE &amp; MILESTONES
+              • 06 / CAREER MILESTONES
             </p>
             <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl">
               PROFESSIONAL{" "}
@@ -928,11 +927,11 @@ function Home() {
             </h2>
           </div>
           <p className="max-w-md font-mono text-xs text-body sm:text-right">
-            Dual track engineering: Academic computer science rigor paired with commercial freelance execution.
+            Academic computer science rigor paired with commercial freelance execution.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1.3fr]">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.3fr]">
           {/* Chapter Selector Cards */}
           <div className="space-y-3">
             {CHAPTERS.map((chap, idx) => {
@@ -963,12 +962,12 @@ function Home() {
             })}
           </div>
 
-          {/* Active Chapter In-Depth View */}
+          {/* Active Chapter View */}
           <motion.div
             key={activeChapter}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.35 }}
             className="rounded-3xl border border-ink/10 bg-card p-8 shadow-xl sm:p-10"
           >
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ink/10 pb-5 font-mono text-xs">
@@ -978,23 +977,23 @@ function Home() {
               <span className="text-body">{CHAPTERS[activeChapter].location}</span>
             </div>
 
-            <h3 className="mt-6 font-monumental text-3xl tracking-tight text-ink sm:text-5xl">
+            <h3 className="mt-5 font-monumental text-3xl tracking-tight text-ink sm:text-4xl">
               {CHAPTERS[activeChapter].title}
             </h3>
 
-            <p className="mt-2 font-editorial-italic text-lg text-indigo">
+            <p className="mt-2 font-editorial-italic text-base text-indigo">
               {CHAPTERS[activeChapter].role} • {CHAPTERS[activeChapter].period}
             </p>
 
-            <p className="mt-6 text-base leading-relaxed text-body">
+            <p className="mt-4 text-sm leading-relaxed text-body sm:text-base">
               {CHAPTERS[activeChapter].description}
             </p>
 
-            <div className="mt-8 border-t border-ink/10 pt-6">
+            <div className="mt-6 border-t border-ink/10 pt-5">
               <p className="font-mono text-xs font-bold tracking-widest text-ink uppercase">
-                KEY CONTRIBUTIONS &amp; DELIVERABLES
+                KEY DELIVERABLES &amp; CONTRIBUTIONS
               </p>
-              <ul className="mt-4 space-y-3 font-mono text-xs text-body">
+              <ul className="mt-3 space-y-2.5 font-mono text-xs text-body">
                 {CHAPTERS[activeChapter].highlights.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <span className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-emerald/20 text-emerald text-[10px] font-bold">
@@ -1012,7 +1011,7 @@ function Home() {
       {/* ========================================================================
           9. CLOSING CONTACT CTA & DIRECTORY (Deep Teal #02343F Background)
           ======================================================================== */}
-      <section className="relative overflow-hidden border-t border-ink/10 bg-ink px-6 py-28 text-cream">
+      <section className="relative overflow-hidden border-t border-ink/10 bg-ink px-6 py-24 text-cream">
         <div className="pointer-events-none absolute left-0 bottom-0 size-[500px] rounded-full bg-indigo/15 blur-3xl" />
         <div className="pointer-events-none absolute right-0 top-0 size-[500px] rounded-full bg-emerald/10 blur-3xl" />
 
@@ -1031,7 +1030,7 @@ function Home() {
               </div>
 
               <p className="max-w-xl text-base leading-relaxed text-cream/75 sm:text-lg">
-                From high-converting Shopify storefronts to AI-powered web applications and Google Merchant Center clearance, I turn ideas into digital products that convert and scale.
+                Available for custom Shopify storefronts, AI content workflows, and full-stack web applications built to scale.
               </p>
 
               <div className="pt-4 flex flex-wrap gap-4">
