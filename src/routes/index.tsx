@@ -424,7 +424,7 @@ function Home() {
                 • 02 / CAPABILITIES &amp; TECHNICAL ARSENAL
               </p>
               <h2 className="mt-2 font-monumental text-4xl tracking-tight text-cream sm:text-6xl">
-                CORE{" "}
+                <span className="text-cream font-bold">CORE</span>{" "}
                 <span className="font-editorial-italic text-cream font-normal">
                   STACK
                 </span>
@@ -761,8 +761,10 @@ function Home() {
                 </span>
               </h2>
 
-              <h3 className="font-display text-2xl font-bold text-cream">
-                {spotlightProject.title}
+              <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
+                <span className="text-cream text-[#F0EDCC] font-bold">
+                  {spotlightProject.title}
+                </span>
               </h3>
 
               {/* Description in full contrast text-cream */}
@@ -1119,7 +1121,7 @@ function Home() {
                   DIRECT COMMUNICATIONS
                 </p>
                 <h3 className="font-monumental text-3xl tracking-tight text-cream sm:text-4xl">
-                  CONNECT{" "}
+                  <span className="text-cream font-bold">CONNECT</span>{" "}
                   <span className="font-editorial-italic text-cream font-normal">
                     directly.
                   </span>
