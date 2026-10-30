@@ -50,66 +50,81 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-// Curated capability items for kinetic showcase
+// Curated capability items for kinetic showcase with faster cycling and targeted expertise terms
 const CAPABILITIES = [
-  { name: "SHOPIFY LIQUID", category: "shopify", level: "CORE EXPERTISE", size: "huge" },
-  { name: "AI CONTENT WORKFLOWS", category: "fullstack", level: "LLMs & GENERATIVE AI", size: "huge" },
-  { name: "REACT.JS & NEXT.JS", category: "frontend", level: "PRODUCTION", size: "large" },
-  { name: "TAILWIND CSS", category: "frontend", level: "DAILY DRIVER", size: "medium" },
-  { name: "NODE.JS / REST API", category: "fullstack", level: "BACKEND ARCHITECTURE", size: "large" },
-  { name: "TYPESCRIPT", category: "frontend", level: "TYPE-SAFE SYSTEMS", size: "medium" },
-  { name: "GEMINI AI API", category: "fullstack", level: "INTELLIGENCE & AGENTS", size: "huge" },
-  { name: "GOOGLE MERCHANT", category: "marketing", level: "100% COMPLIANCE", size: "huge" },
-  { name: "AFTER EFFECTS", category: "creative", level: "3D MOTION & HUDS", size: "large" },
-  { name: "FLUTTER & DART", category: "fullstack", level: "CROSS-PLATFORM APPS", size: "medium" },
+  { name: "SHOPIFY", category: "shopify", level: "CORE STOREFRONTS", size: "huge" },
+  { name: "GMC / GOOGLE MERCHANT", category: "marketing", level: "100% COMPLIANCE", size: "huge" },
+  { name: "AI CONTENT", category: "fullstack", level: "GENERATIVE & LLMs", size: "huge" },
+  { name: "UGC CONTENT", category: "creative", level: "HIGH ROAS ADS", size: "large" },
+  { name: "AI WORKFLOWS", category: "fullstack", level: "AUTOMATION & AGENTS", size: "large" },
+  { name: "MOTION CONTENT", category: "creative", level: "3D & AFTER EFFECTS", size: "huge" },
+  { name: "FULL STACK WEB DEVELOPMENT", category: "frontend", level: "REACT & NEXT.JS", size: "large" },
+  { name: "APP DEVELOPMENT", category: "fullstack", level: "FLUTTER & DART", size: "large" },
+  { name: "SHOPIFY LIQUID", category: "shopify", level: "BESPOKE ARCHITECTURE", size: "huge" },
+  { name: "REACT.JS & NEXT.JS", category: "frontend", level: "PRODUCTION SYSTEMS", size: "large" },
+  { name: "NODE.JS & REST APIS", category: "fullstack", level: "BACKEND INFRA", size: "medium" },
   { name: "PERFORMANCE TUNING", category: "shopify", level: "95+ SPEED SCORES", size: "large" },
-  { name: "CONVERSION CRO", category: "shopify", level: "REVENUE OPTIMIZATION", size: "huge" },
 ];
 
 const CHAPTERS = [
   {
     id: "01",
+    tag: "CORE FOCUS 01",
+    title: "SHOPIFY & GMC SPECIALIST",
+    role: "Bespoke Liquid Storefronts & Merchant Center Recovery",
+    period: "2024 — PRESENT",
+    location: "Global Remote",
+    description:
+      "Engineering bespoke Shopify storefronts, custom Liquid sections, high-conversion product pages, and 100% Google Merchant Center account recovery and shopping ad setup.",
+    highlights: [
+      "35+ verified production storefronts and commercial systems shipped",
+      "Google Merchant Center policy compliance, feed optimization & suspension recovery",
+      "Zero-latency Liquid sections, custom cart drawers, and speed tuning",
+    ],
+  },
+  {
+    id: "02",
+    tag: "CORE FOCUS 02",
+    title: "AI CONTENT & MOTION SPECIALIST",
+    role: "AI Video Pipelines, 3D HUDs & Motion Direction",
+    period: "2023 — PRESENT",
+    location: "Global Remote",
+    description:
+      "Directing AI-driven visual content, 3D space telemetry animations, and high-retention commercial video ad campaigns engineered for maximum ROAS on paid media.",
+    highlights: [
+      "Orbital telemetry & space HUD graphics for NASA award project (2nd Runner Up)",
+      "Luxury branding and editorial catalog design for RoyLux & D2C lifestyle brands",
+      "Commercial UGC video ads and kinetic typography producing high paid conversions",
+    ],
+  },
+  {
+    id: "03",
+    tag: "CORE FOCUS 03",
+    title: "FULL STACK DEVELOPER — WEB & APP",
+    role: "Full-Stack Web Architect & Cross-Platform Mobile Engineer",
+    period: "2024 — PRESENT",
+    location: "Global Remote",
+    description:
+      "Architecting end-to-end web applications and cross-platform mobile citizen tools using React, TanStack Start, Next.js, Node.js, and Flutter with Gemini AI integration.",
+    highlights: [
+      "Modern web platforms: custom invoice portals, SaaS web apps & API webhooks",
+      "Cross-platform mobile citizen apps built with Flutter & Dart (Fair Prices, Astrovia)",
+      "Type-safe APIs, authentication systems, database architecture & cloud deployments",
+    ],
+  },
+  {
+    id: "04",
     tag: "ACADEMIC FOUNDATION",
     title: "VARENDRA UNIVERSITY",
     role: "B.Sc. in Computer Science & Engineering",
     period: "2022 — 2026",
     location: "Rajshahi, Bangladesh",
     description:
-      "Core software engineering, algorithms, AI architectures, and high-performance citizen platforms.",
+      "Rigorous foundations in algorithms, software architecture, distributed web systems, and applied artificial intelligence workflows.",
     highlights: [
       "NASA Space Apps 2025: 2nd Runner Up & Global Nominee (Team AstroVenture)",
       "Thesis on applied AI workflows & citizen software architectures",
-      "Lead developer for university hackathons & software showcases",
-    ],
-  },
-  {
-    id: "02",
-    tag: "INDEPENDENT ENGINEERING",
-    title: "FREELANCE SHOPIFY DEV",
-    role: "Lead Liquid Theme & Storefront Specialist",
-    period: "2024 — PRESENT",
-    location: "Global Remote",
-    description:
-      "Engineering bespoke Shopify storefronts, custom sections, and conversion funnels for international brands.",
-    highlights: [
-      "35+ verified production projects shipped globally",
-      "Google Merchant Center compliance & suspension recovery",
-      "Custom metafield architecture, cart drawers, and speed tuning",
-    ],
-  },
-  {
-    id: "03",
-    tag: "CREATIVE & VIDEO",
-    title: "AI CONTENT & MOTION",
-    role: "Creative Director & Motion Specialist",
-    period: "2023 — PRESENT",
-    location: "Global Remote",
-    description:
-      "Directing AI-driven visual content, 3D telemetry animations, and high-retention commercial ad campaigns.",
-    highlights: [
-      "Orbital telemetry & space HUD graphics for NASA award project",
-      "Luxury branding and editorial design for RoyLux & D2C brands",
-      "Commercial video ads engineered for high ROAS on paid media",
+      "Lead developer for university hackathons & software project showcases",
     ],
   },
 ];
@@ -123,6 +138,46 @@ const HOMEPAGE_CATEGORIES = [
   { id: "branding", label: "CREATIVE & NASA / VIDEO", subtitle: "NASA Space Apps 2025, luxury branding & commercial video" },
   { id: "growth", label: "GROWTH DATA & LEADS", subtitle: "B2B prospecting, data scraping & verified decision-maker pipelines" },
   { id: "social", label: "SOCIAL MEDIA MANAGEMENT", subtitle: "YouTube channel direction, Facebook/Instagram growth & viral reach" },
+];
+
+// Creative work cards with verified, direct destination links
+const CREATIVE_WORK_CARDS = [
+  {
+    title: "NASA Space Apps 2025",
+    tag: "VIDEO EDITING & 3D MOTION",
+    desc: "Orbital telemetry HUD graphics & space agricultural showcase.",
+    badge: "2nd Runner Up",
+    link: "/works/terra-farm-nasa",
+    isExternal: false,
+    ctaText: "VIEW CASE STUDY",
+  },
+  {
+    title: "RoyLux Fashion Branding",
+    tag: "BRAND IDENTITY & CONTENT",
+    desc: "High-end luxury aesthetic, editorial typography, and catalog design.",
+    badge: "Creative Direction",
+    link: "/works/roylux-branding",
+    isExternal: false,
+    ctaText: "EXPLORE WORK",
+  },
+  {
+    title: "Shopify D2C Storefronts",
+    tag: "E-COMMERCE UI/UX",
+    desc: "Conversion-optimized Liquid themes & bespoke product pages.",
+    badge: "8+ Storefronts",
+    link: "/works?category=shopify",
+    isExternal: false,
+    ctaText: "SEE STOREFRONTS",
+  },
+  {
+    title: "Commercial UGC & Ads",
+    tag: "AFTER EFFECTS & PREMIERE",
+    desc: "High-retention social ads, kinetic typography, and sound design.",
+    badge: "Commercial Ads",
+    link: "https://www.behance.net/mominofficial",
+    isExternal: true,
+    ctaText: "VIEW ON BEHANCE",
+  },
 ];
 
 function Home() {
@@ -144,12 +199,12 @@ function Home() {
       ? CAPABILITIES
       : CAPABILITIES.filter((s) => s.category === skillCategory);
 
-  // Auto rotate capabilities if not paused
+  // Faster, fluid auto-rotation for animated capabilities (1600ms rhythm)
   useEffect(() => {
     if (isSkillPaused || filteredSkills.length === 0) return;
     const interval = setInterval(() => {
       setActiveSkillIndex((prev) => (prev + 1) % filteredSkills.length);
-    }, 3200);
+    }, 1600);
     return () => clearInterval(interval);
   }, [isSkillPaused, filteredSkills.length]);
 
@@ -358,27 +413,27 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          3. CAPABILITIES / SKILLS TYPOGRAPHY SECTION (Deep Teal #02343F Background)
+          3. CAPABILITIES / SKILLS TYPOGRAPHY SECTION (Faster, Dynamic & High Contrast)
           ======================================================================== */}
       <section className="relative border-y border-ink/10 bg-ink px-6 py-20 text-cream">
         <div className="relative mx-auto max-w-7xl">
-          {/* Top Section Header */}
-          <div className="flex flex-wrap items-end justify-between gap-4 border-b border-cream/15 pb-6">
+          {/* Top Section Header with 100% Crisp Contrast */}
+          <div className="flex flex-wrap items-end justify-between gap-4 border-b border-cream/20 pb-6">
             <div>
-              <p className="font-mono text-[11px] font-bold tracking-widest text-indigo-300 uppercase">
+              <p className="font-mono text-[11px] font-bold tracking-widest text-cream uppercase">
                 • 02 / CAPABILITIES &amp; TECHNICAL ARSENAL
               </p>
               <h2 className="mt-2 font-monumental text-4xl tracking-tight text-cream sm:text-6xl">
                 CORE{" "}
-                <span className="font-editorial-italic text-indigo-300 font-normal">
+                <span className="font-editorial-italic text-cream font-normal">
                   STACK
                 </span>
               </h2>
             </div>
 
-            <div className="font-mono text-xs text-cream/70 sm:text-right">
+            <div className="font-mono text-xs text-cream/90 sm:text-right">
               <p className="font-bold text-cream">MULTI-DISCIPLINARY ARCHITECTURE</p>
-              <p className="text-emerald">EST. 2024–2026 • PRODUCTION TESTED</p>
+              <p className="text-emerald font-semibold">EST. 2024–2026 • PRODUCTION TESTED</p>
             </div>
           </div>
 
@@ -386,11 +441,11 @@ function Home() {
           <div className="mt-8 flex flex-wrap gap-2">
             {[
               { id: "all", label: "ALL DISCIPLINES", count: "12" },
-              { id: "shopify", label: "SHOPIFY & LIQUID", count: "03" },
-              { id: "frontend", label: "FRONTEND & REACT", count: "03" },
-              { id: "fullstack", label: "AI & BACKEND", count: "03" },
+              { id: "shopify", label: "SHOPIFY & GMC", count: "03" },
+              { id: "frontend", label: "WEB DEV & REACT", count: "03" },
+              { id: "fullstack", label: "AI & APP DEV", count: "03" },
               { id: "marketing", label: "GMC & CRO", count: "02" },
-              { id: "creative", label: "MOTION & VIDEO", count: "02" },
+              { id: "creative", label: "MOTION & UGC", count: "02" },
             ].map((cat) => (
               <button
                 key={cat.id}
@@ -402,15 +457,15 @@ function Home() {
                   "rounded-full border px-4 py-1.5 font-mono text-[11px] font-semibold tracking-wider uppercase transition-all duration-300",
                   skillCategory === cat.id
                     ? "border-cream bg-cream text-ink font-bold shadow-md"
-                    : "border-cream/20 bg-cream/5 text-cream/70 hover:border-cream/40 hover:text-cream",
+                    : "border-cream/20 bg-cream/5 text-cream/80 hover:border-cream/40 hover:text-cream",
                 )}
               >
-                {cat.label} <span className="opacity-60">[{cat.count}]</span>
+                {cat.label} <span className="opacity-70">[{cat.count}]</span>
               </button>
             ))}
           </div>
 
-          {/* Oversized Kinetic Typography Cloud Display */}
+          {/* Oversized Kinetic Typography Cloud Display (Faster 0.22s snappy transition) */}
           <div className="relative mt-10 flex min-h-[320px] flex-wrap items-center justify-center gap-x-10 gap-y-6 rounded-3xl border border-cream/15 bg-cream/[0.04] p-8 text-center backdrop-blur-sm sm:min-h-[380px]">
             {filteredSkills.map((skill, idx) => {
               const isHighlight = idx === activeSkillIndex;
@@ -418,28 +473,28 @@ function Home() {
                 <motion.div
                   key={skill.name}
                   animate={{
-                    scale: isHighlight ? 1.06 : 0.98,
-                    opacity: isHighlight ? 1 : 0.6,
+                    scale: isHighlight ? 1.07 : 0.98,
+                    opacity: isHighlight ? 1 : 0.55,
                     y: isHighlight ? -4 : 0,
                   }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
                   className="group relative cursor-pointer"
                   onClick={() => setActiveSkillIndex(idx)}
                 >
                   <p
                     className={cn(
-                      "font-monumental tracking-tight transition-all duration-300",
+                      "font-monumental tracking-tight transition-all duration-200",
                       skill.size === "huge" && "text-3xl sm:text-6xl lg:text-7xl",
                       skill.size === "large" && "text-2xl sm:text-4xl lg:text-5xl",
                       skill.size === "medium" && "text-xl sm:text-3xl lg:text-4xl",
                       isHighlight
-                        ? "text-cream drop-shadow-[0_0_25px_rgba(240,237,204,0.4)]"
+                        ? "text-cream drop-shadow-[0_0_25px_rgba(240,237,204,0.45)]"
                         : "text-cream/40 group-hover:text-cream/80",
                     )}
                   >
                     {skill.name}
                   </p>
-                  <span className="font-mono text-[10px] tracking-widest text-indigo-300 uppercase opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="font-mono text-[10px] tracking-widest text-cream uppercase opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                     {skill.level}
                   </span>
                 </motion.div>
@@ -448,11 +503,11 @@ function Home() {
           </div>
 
           {/* Skill Controls & Subtitle Bar */}
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-cream/15 pt-6 font-mono text-xs">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-cream/20 pt-6 font-mono text-xs">
             <div className="flex items-center gap-3">
-              <span className="font-bold text-indigo-300">CURRENT FOCUS</span>
+              <span className="font-bold text-cream">CURRENT FOCUS</span>
               <span className="text-cream/40">•</span>
-              <span className="text-cream/90">
+              <span className="text-cream">
                 {filteredSkills[activeSkillIndex]?.name} —{" "}
                 <span className="text-emerald font-semibold">
                   {filteredSkills[activeSkillIndex]?.level}
@@ -467,14 +522,14 @@ function Home() {
                     (prev) => (prev - 1 + filteredSkills.length) % filteredSkills.length,
                   )
                 }
-                className="rounded-lg border border-cream/20 bg-cream/5 p-2 transition-colors hover:bg-cream/15"
+                className="rounded-lg border border-cream/25 bg-cream/5 p-2 text-cream transition-colors hover:bg-cream/20"
                 title="Previous Skill"
               >
                 <ChevronLeft size={16} />
               </button>
               <button
                 onClick={() => setIsSkillPaused((p) => !p)}
-                className="flex items-center gap-1.5 rounded-lg border border-cream/20 bg-cream/5 px-3 py-2 transition-colors hover:bg-cream/15"
+                className="flex items-center gap-1.5 rounded-lg border border-cream/25 bg-cream/5 px-3 py-2 text-cream transition-colors hover:bg-cream/20"
               >
                 {isSkillPaused ? <Play size={14} /> : <Pause size={14} />}
                 <span>{isSkillPaused ? "PLAY" : "PAUSE"}</span>
@@ -483,7 +538,7 @@ function Home() {
                 onClick={() =>
                   setActiveSkillIndex((prev) => (prev + 1) % filteredSkills.length)
                 }
-                className="rounded-lg border border-cream/20 bg-cream/5 p-2 transition-colors hover:bg-cream/15"
+                className="rounded-lg border border-cream/25 bg-cream/5 p-2 text-cream transition-colors hover:bg-cream/20"
                 title="Next Skill"
               >
                 <ChevronRight size={16} />
@@ -491,7 +546,7 @@ function Home() {
 
               <Link
                 to="/about"
-                className="inline-flex items-center gap-1.5 rounded-lg border border-cream/30 bg-cream px-4 py-2 font-bold text-ink transition-colors hover:bg-indigo-300 hover:text-ink"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-cream/30 bg-cream px-4 py-2 font-bold text-ink transition-colors hover:bg-cream/90"
               >
                 <span>EXPLORE ALL SKILLS</span>
                 <ArrowUpRight size={14} />
@@ -640,20 +695,20 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          5. FEATURED CLIENT WORK SPOTLIGHT (Deep Teal #02343F Background)
+          5. FEATURED CLIENT WORK SPOTLIGHT (Fixed 100% High Contrast Text Visibility)
           ======================================================================== */}
       <section className="relative overflow-hidden border-y border-ink/10 bg-ink py-20 text-cream">
-        {/* Continuous Marquee Ticker */}
-        <div className="border-b border-cream/10 bg-cream/5 py-3 font-mono text-xs tracking-widest text-cream/70 uppercase overflow-hidden">
+        {/* Continuous Marquee Ticker with high-contrast text */}
+        <div className="border-b border-cream/20 bg-cream/5 py-3 font-mono text-xs tracking-widest text-cream uppercase overflow-hidden">
           <div className="marquee-scroll flex gap-8">
             {[1, 2, 3, 4].map((i) => (
               <span key={i} className="inline-flex items-center gap-8 whitespace-nowrap">
-                <span>✦ 2ND RUNNER UP NASA SPACE APPS 2025</span>
-                <span>✦ BESPOKE SHOPIFY LIQUID SECTIONS</span>
-                <span>✦ 100% GOOGLE MERCHANT CENTER COMPLIANCE</span>
-                <span>✦ GEMINI AI CITIZEN BUDGETING APP</span>
-                <span>✦ ZERO-LATENCY USER EXPERIENCE</span>
-                <span>✦ 35+ VERIFIED DEPLOYMENTS</span>
+                <span className="text-cream">✦ 2ND RUNNER UP NASA SPACE APPS 2025</span>
+                <span className="text-cream">✦ BESPOKE SHOPIFY LIQUID SECTIONS</span>
+                <span className="text-cream">✦ 100% GOOGLE MERCHANT CENTER COMPLIANCE</span>
+                <span className="text-cream">✦ GEMINI AI CITIZEN BUDGETING APP</span>
+                <span className="text-cream">✦ ZERO-LATENCY USER EXPERIENCE</span>
+                <span className="text-cream">✦ 35+ VERIFIED DEPLOYMENTS</span>
               </span>
             ))}
           </div>
@@ -663,10 +718,10 @@ function Home() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left: Device Mockup Presentation */}
             <div className="relative group">
-              <div className="absolute -inset-4 rounded-3xl bg-indigo/20 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="relative overflow-hidden rounded-2xl border border-cream/20 bg-card p-3 shadow-2xl backdrop-blur-xl">
-                <div className="flex items-center justify-between border-b border-cream/10 pb-2 px-2 font-mono text-[10px] text-cream/70">
-                  <span>SPOTLIGHT CASE STUDY • {spotlightProject.slug.toUpperCase()}</span>
+              <div className="absolute -inset-4 rounded-3xl bg-emerald/10 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="relative overflow-hidden rounded-2xl border border-cream/30 bg-card p-3 shadow-2xl backdrop-blur-xl">
+                <div className="flex items-center justify-between border-b border-cream/20 pb-2 px-2 font-mono text-[10px] text-cream">
+                  <span className="font-bold tracking-wider">SPOTLIGHT CASE STUDY • {spotlightProject.slug.toUpperCase()}</span>
                   <span className="flex items-center gap-1.5 text-emerald font-semibold">
                     <span className="size-1.5 rounded-full bg-emerald animate-pulse" />
                     AWARD-WINNING / ACTIVE
@@ -679,20 +734,22 @@ function Home() {
                 />
               </div>
 
-              <div className="absolute -bottom-5 -right-4 rounded-full border border-cream/20 bg-ink px-4 py-2 font-mono text-[10px] font-bold tracking-wider text-cream uppercase shadow-xl">
+              <div className="absolute -bottom-5 -right-4 rounded-full border border-cream/30 bg-ink px-4 py-2 font-mono text-[10px] font-bold tracking-wider text-cream uppercase shadow-xl">
                 NASA GLOBAL NOMINEE • VERIFIED CASE STUDY
               </div>
             </div>
 
-            {/* Right: Editorial Narrative (Clean & Minimal) */}
+            {/* Right: Editorial Narrative with 100% High Contrast Text Visibility */}
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/10 px-3 py-1 font-mono text-[10px] font-bold tracking-widest text-indigo-300 uppercase">
-                SPOTLIGHT CHAPTER • {spotlightProject.tag}
+              {/* Badge with high-contrast Warm Cream text on dark teal */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-cream/30 bg-cream/10 px-3.5 py-1 font-mono text-[11px] font-bold tracking-widest text-cream uppercase shadow-sm">
+                <span>SPOTLIGHT CHAPTER • {spotlightProject.tag}</span>
               </div>
 
+              {/* Main Heading with 100% Crisp Cream Contrast */}
               <h2 className="font-monumental text-4xl tracking-tight text-cream sm:text-6xl">
                 BUILT FOR{" "}
-                <span className="font-editorial-italic text-indigo-300 font-normal">
+                <span className="font-editorial-italic text-cream font-normal underline decoration-emerald/60 underline-offset-8">
                   REAL IMPACT.
                 </span>
               </h2>
@@ -701,26 +758,29 @@ function Home() {
                 {spotlightProject.title}
               </h3>
 
-              <p className="text-base leading-relaxed text-cream/75">
-                AI-powered precision agriculture and orbital telemetry platform, recognized globally at NASA Space Apps Challenge 2025.
+              {/* Description in full contrast text-cream/90 */}
+              <p className="text-base leading-relaxed text-cream/90 font-medium">
+                AI-powered precision agriculture and orbital telemetry platform, recognized globally as 2nd Runner Up and Global Nominee at NASA Space Apps Challenge 2025.
               </p>
 
+              {/* Highlights in crisp text-cream */}
               {spotlightProject.highlights && (
-                <ul className="space-y-2.5 font-mono text-xs text-cream/85">
+                <ul className="space-y-2.5 font-mono text-xs text-cream font-medium">
                   {spotlightProject.highlights.slice(0, 3).map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <span className="mt-0.5 size-1.5 rounded-full bg-emerald" />
+                      <span className="mt-0.5 size-1.5 rounded-full bg-emerald shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               )}
 
+              {/* Action Buttons with high contrast */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   to="/works/$slug"
                   params={{ slug: spotlightProject.slug }}
-                  className="inline-flex items-center gap-2 rounded-full bg-cream px-6 py-3 font-mono text-xs font-bold tracking-wider text-ink uppercase shadow-lg transition-transform hover:scale-105"
+                  className="inline-flex items-center gap-2 rounded-full bg-cream px-7 py-3 font-mono text-xs font-bold tracking-wider text-ink uppercase shadow-lg transition-transform hover:scale-105 hover:bg-cream/90"
                 >
                   <span>VIEW FULL CASE STUDY</span>
                   <ArrowRight size={14} />
@@ -731,7 +791,7 @@ function Home() {
                     href={spotlightProject.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-cream/25 bg-cream/5 px-6 py-3 font-mono text-xs font-semibold tracking-wider text-cream uppercase backdrop-blur transition-colors hover:border-cream/50 hover:bg-cream/15"
+                    className="inline-flex items-center gap-2 rounded-full border border-cream/40 bg-cream/10 px-6 py-3 font-mono text-xs font-semibold tracking-wider text-cream uppercase backdrop-blur transition-colors hover:border-cream hover:bg-cream/20"
                   >
                     <span>OPEN PROJECT LINK</span>
                     <ExternalLink size={14} />
@@ -744,14 +804,14 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          6. MORE CREATIVE WORK (BEHANCE SECTION)
+          6. MORE CREATIVE WORK (Targeted Destination Links per Card)
           ======================================================================== */}
       <section className="relative overflow-hidden border-b border-ink/10 bg-cream py-20 text-ink">
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="flex flex-wrap items-end justify-between gap-6 border-b border-ink/10 pb-8">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-indigo/20 bg-indigo/10 px-3.5 py-1 font-mono text-[10px] font-bold tracking-widest text-indigo uppercase">
-                <span>BEHANCE VERIFIED CREATIVE PORTFOLIO</span>
+                <span>PORTFOLIO SHOWCASE &amp; VISUAL DIRECTION</span>
               </div>
               <h2 className="mt-3 font-monumental text-4xl tracking-tight text-ink sm:text-6xl lg:text-7xl">
                 MORE CREATIVE{" "}
@@ -762,41 +822,16 @@ function Home() {
             </div>
 
             <div className="max-w-md font-mono text-xs text-body sm:text-right">
-              <p className="font-bold text-ink">@MOMINOFFICIAL ON BEHANCE</p>
+              <p className="font-bold text-ink">VERIFIED CLIENT &amp; AWARD PRODUCTIONS</p>
               <p className="mt-1">
-                Explore Motion Graphics, AI Content, 3D Assets &amp; Commercial Video Campaigns.
+                Explore Motion Graphics, AI Content, 3D Assets &amp; Storefronts across dedicated case studies.
               </p>
             </div>
           </div>
 
-          {/* Behance Feature Grid */}
+          {/* Feature Grid with Correct Destination Links per Card */}
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                title: "NASA Space Apps 2025",
-                tag: "VIDEO EDITING & 3D MOTION",
-                desc: "Orbital telemetry HUD graphics & space agricultural showcase.",
-                badge: "2nd Runner Up",
-              },
-              {
-                title: "RoyLux Fashion Branding",
-                tag: "BRAND IDENTITY & CONTENT",
-                desc: "High-end luxury aesthetic, editorial typography, and catalog design.",
-                badge: "Creative Direction",
-              },
-              {
-                title: "Shopify D2C Storefronts",
-                tag: "E-COMMERCE UI/UX",
-                desc: "Conversion-optimized Liquid themes & bespoke product pages.",
-                badge: "8+ Storefronts",
-              },
-              {
-                title: "Commercial UGC & Ads",
-                tag: "AFTER EFFECTS & PREMIERE",
-                desc: "High-retention social ads, kinetic typography, and sound design.",
-                badge: "Commercial Ads",
-              },
-            ].map((card, i) => (
+            {CREATIVE_WORK_CARDS.map((card, i) => (
               <div
                 key={i}
                 className="group relative flex flex-col justify-between rounded-2xl border border-ink/10 bg-card p-6 shadow-sm transition-all duration-300 hover:border-indigo/50 hover:shadow-xl"
@@ -815,16 +850,27 @@ function Home() {
                     {card.desc}
                   </p>
                 </div>
+
                 <div className="mt-6 border-t border-ink/10 pt-4">
-                  <a
-                    href="https://www.behance.net/mominofficial"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-indigo uppercase hover:underline"
-                  >
-                    <span>VIEW ON BEHANCE</span>
-                    <ArrowUpRight size={13} />
-                  </a>
+                  {card.isExternal ? (
+                    <a
+                      href={card.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-indigo uppercase hover:underline"
+                    >
+                      <span>{card.ctaText}</span>
+                      <ArrowUpRight size={13} />
+                    </a>
+                  ) : (
+                    <Link
+                      to={card.link}
+                      className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-indigo uppercase hover:underline"
+                    >
+                      <span>{card.ctaText}</span>
+                      <ArrowRight size={13} />
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -911,23 +957,23 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          8. PROFESSIONAL CHAPTERS & MILESTONES (Concise)
+          8. PROFESSIONAL CHAPTERS & MILESTONES (All 3 Core Specializations Included)
           ======================================================================== */}
       <section className="relative mx-auto max-w-7xl px-6 py-10">
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-ink/10 pb-6">
           <div>
             <p className="font-mono text-[11px] font-bold tracking-widest text-indigo uppercase">
-              • 06 / CAREER MILESTONES
+              • 06 / PROFESSIONAL CHAPTERS &amp; FOCUS
             </p>
             <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl">
-              PROFESSIONAL{" "}
+              CORE{" "}
               <span className="font-editorial-italic text-indigo font-normal">
                 CHAPTERS
               </span>
             </h2>
           </div>
           <p className="max-w-md font-mono text-xs text-body sm:text-right">
-            Academic computer science rigor paired with commercial freelance execution.
+            Three dedicated specializations: Shopify &amp; GMC, AI Content &amp; Motion, and Full Stack Web &amp; App Development.
           </p>
         </div>
 
@@ -1009,7 +1055,7 @@ function Home() {
       </section>
 
       {/* ========================================================================
-          9. CLOSING CONTACT CTA & DIRECTORY (Deep Teal #02343F Background)
+          9. CLOSING CONTACT CTA & DIRECTORY (Deep Teal #02343F Background with High Contrast)
           ======================================================================== */}
       <section className="relative overflow-hidden border-t border-ink/10 bg-ink px-6 py-24 text-cream">
         <div className="pointer-events-none absolute left-0 bottom-0 size-[500px] rounded-full bg-indigo/15 blur-3xl" />
@@ -1017,26 +1063,26 @@ function Home() {
 
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-            {/* Left Monumental Statement */}
+            {/* Left Monumental Statement with 100% Crisp Contrast */}
             <div className="space-y-6">
-              <p className="font-mono text-[11px] font-bold tracking-widest text-indigo-300 uppercase">
+              <p className="font-mono text-[11px] font-bold tracking-widest text-cream uppercase">
                 • 07 / GOT AN AMBITIOUS PROJECT IN MIND?
               </p>
 
               <div className="font-monumental leading-[0.88] text-cream" style={{ fontSize: "clamp(3.8rem, 10vw, 9rem)" }}>
                 LET&apos;S <br />
-                <span className="font-editorial-italic font-normal text-indigo-300">make it</span> <br />
+                <span className="font-editorial-italic font-normal text-cream">make it</span> <br />
                 REAL<span className="text-emerald">.</span>
               </div>
 
-              <p className="max-w-xl text-base leading-relaxed text-cream/75 sm:text-lg">
+              <p className="max-w-xl text-base leading-relaxed text-cream/90 font-medium sm:text-lg">
                 Available for custom Shopify storefronts, AI content workflows, and full-stack web applications built to scale.
               </p>
 
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-3 rounded-full bg-cream px-8 py-4 font-mono text-sm font-bold tracking-wider text-ink uppercase shadow-2xl transition-all hover:scale-105 hover:bg-indigo-300 hover:text-ink"
+                  className="group inline-flex items-center gap-3 rounded-full bg-cream px-8 py-4 font-mono text-sm font-bold tracking-wider text-ink uppercase shadow-2xl transition-all hover:scale-105 hover:bg-cream/90"
                 >
                   <span>LET&apos;S TALK / CONTACT</span>
                   <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -1046,7 +1092,7 @@ function Home() {
                   href={SOCIALS.behance}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full border border-cream/25 bg-cream/5 px-7 py-4 font-mono text-sm font-bold tracking-wider text-cream uppercase backdrop-blur transition-all hover:bg-cream/15 hover:border-cream/50"
+                  className="group inline-flex items-center gap-2 rounded-full border border-cream/30 bg-cream/10 px-7 py-4 font-mono text-sm font-bold tracking-wider text-cream uppercase backdrop-blur transition-all hover:bg-cream/20 hover:border-cream/50"
                 >
                   <span>BEHANCE PROFILE</span>
                   <ArrowUpRight size={16} />
@@ -1054,24 +1100,24 @@ function Home() {
               </div>
             </div>
 
-            {/* Right Interactive Channel Directory */}
-            <div className="rounded-3xl border border-cream/15 bg-cream/[0.04] p-8 shadow-2xl backdrop-blur-xl sm:p-10">
-              <div className="flex items-center justify-between border-b border-cream/10 pb-4 font-mono text-xs">
-                <span className="text-cream/60">ALL DIRECT CHANNELS</span>
+            {/* Right Interactive Channel Directory with High Contrast */}
+            <div className="rounded-3xl border border-cream/20 bg-cream/[0.06] p-8 shadow-2xl backdrop-blur-xl sm:p-10">
+              <div className="flex items-center justify-between border-b border-cream/20 pb-4 font-mono text-xs">
+                <span className="text-cream/80">ALL DIRECT CHANNELS</span>
                 <span className="text-emerald font-semibold">ACTIVE &amp; MONITORED ↗</span>
               </div>
 
               <div className="mt-6">
-                <p className="font-mono text-[10px] tracking-widest text-indigo-300 uppercase">
+                <p className="font-mono text-[10px] tracking-widest text-cream uppercase">
                   DIRECT COMMUNICATIONS
                 </p>
                 <h3 className="font-monumental text-3xl tracking-tight text-cream sm:text-4xl">
                   CONNECT{" "}
-                  <span className="font-editorial-italic text-cream/70 font-normal">
+                  <span className="font-editorial-italic text-cream font-normal">
                     directly.
                   </span>
                 </h3>
-                <p className="mt-2 text-sm text-cream/65">
+                <p className="mt-2 text-sm text-cream/80">
                   Business enquiries, collaborations, or Shopify store consultations.
                 </p>
               </div>
@@ -1079,16 +1125,16 @@ function Home() {
               {/* Channels List */}
               <div className="mt-8 space-y-3 font-mono text-xs">
                 {/* Channel 1: Primary Email with 1-click Copy */}
-                <div className="rounded-2xl border border-cream/20 bg-cream/10 p-4 transition-all hover:bg-cream/15">
-                  <div className="flex items-center justify-between text-[10px] text-indigo-300">
+                <div className="rounded-2xl border border-cream/25 bg-cream/10 p-4 transition-all hover:bg-cream/15">
+                  <div className="flex items-center justify-between text-[10px] text-cream">
                     <span>01 / PRIMARY EMAIL</span>
-                    <span>RECOMMENDED</span>
+                    <span className="font-bold text-emerald">RECOMMENDED</span>
                   </div>
                   <div className="mt-2 flex items-center justify-between">
                     <span className="font-semibold text-cream break-all">{EMAIL}</span>
                     <button
                       onClick={handleCopyEmail}
-                      className="ml-3 inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-cream/20 bg-cream/10 px-3 py-1.5 text-[10px] text-cream transition-colors hover:bg-cream/20"
+                      className="ml-3 inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-cream/30 bg-cream/15 px-3 py-1.5 text-[10px] text-cream transition-colors hover:bg-cream/25"
                     >
                       {copied ? <CheckCheck size={12} className="text-emerald" /> : <Copy size={12} />}
                       <span>{copied ? "COPIED" : "COPY"}</span>
@@ -1101,13 +1147,13 @@ function Home() {
                   href={SOCIALS.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-cream/10 bg-cream/5 p-4 transition-all hover:border-emerald hover:bg-emerald/10"
+                  className="flex items-center justify-between rounded-xl border border-cream/15 bg-cream/5 p-4 transition-all hover:border-emerald hover:bg-emerald/10"
                 >
                   <div>
-                    <span className="text-[10px] text-cream/50">02 / LIVE CHAT</span>
+                    <span className="text-[10px] text-cream/70">02 / LIVE CHAT</span>
                     <p className="font-bold text-cream">WHATSAPP</p>
                   </div>
-                  <span className="flex items-center gap-1 text-[11px] text-emerald">
+                  <span className="flex items-center gap-1 text-[11px] text-emerald font-semibold">
                     +880 1792 872188 <ArrowUpRight size={13} />
                   </span>
                 </a>
@@ -1117,13 +1163,13 @@ function Home() {
                   href={SOCIALS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-cream/10 bg-cream/5 p-4 transition-all hover:border-cream/30 hover:bg-cream/10"
+                  className="flex items-center justify-between rounded-xl border border-cream/15 bg-cream/5 p-4 transition-all hover:border-cream/35 hover:bg-cream/15"
                 >
                   <div>
-                    <span className="text-[10px] text-cream/50">03 / PROFESSIONAL NETWORK</span>
+                    <span className="text-[10px] text-cream/70">03 / PROFESSIONAL NETWORK</span>
                     <p className="font-bold text-cream">LINKEDIN</p>
                   </div>
-                  <span className="flex items-center gap-1 text-[11px] text-cream/80">
+                  <span className="flex items-center gap-1 text-[11px] text-cream font-medium">
                     CONNECT ↗
                   </span>
                 </a>
@@ -1133,13 +1179,13 @@ function Home() {
                   href={SOCIALS.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between rounded-xl border border-cream/10 bg-cream/5 p-4 transition-all hover:border-cream/30 hover:bg-cream/10"
+                  className="flex items-center justify-between rounded-xl border border-cream/15 bg-cream/5 p-4 transition-all hover:border-cream/35 hover:bg-cream/15"
                 >
                   <div>
-                    <span className="text-[10px] text-cream/50">04 / CODE REPOSITORIES</span>
+                    <span className="text-[10px] text-cream/70">04 / CODE REPOSITORIES</span>
                     <p className="font-bold text-cream">GITHUB</p>
                   </div>
-                  <span className="flex items-center gap-1 text-[11px] text-cream/80">
+                  <span className="flex items-center gap-1 text-[11px] text-cream font-medium">
                     EXPLORE ↗
                   </span>
                 </a>
