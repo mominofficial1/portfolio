@@ -27,47 +27,29 @@ export function Navbar() {
   useEffect(() => setOpen(false), [pathname]);
 
   const isHome = pathname === "/";
-  const isDarkHero = isHome && !scrolled;
 
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-ink/10 bg-cream/90 text-ink shadow-lg shadow-black/5 backdrop-blur-xl"
-          : isDarkHero
-            ? "bg-transparent text-cream py-2"
-            : "bg-transparent text-ink py-2",
+          ? "border-b border-ink/10 bg-cream/95 text-ink shadow-lg shadow-black/5 backdrop-blur-xl py-2"
+          : "bg-transparent text-ink py-3",
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
         {/* Brand Monogram + Title */}
         <Link to="/" className="group flex items-center gap-3">
           <div
-            className={cn(
-              "flex size-9 items-center justify-center rounded-lg font-monumental text-xl shadow-sm transition-transform duration-300 group-hover:scale-105",
-              isDarkHero
-                ? "border border-cream/20 bg-cream/10 text-cream group-hover:border-indigo"
-                : "border border-ink/15 bg-card text-ink group-hover:border-indigo/50",
-            )}
+            className="flex size-9 items-center justify-center rounded-lg border border-ink/15 bg-card font-monumental text-xl text-ink shadow-sm transition-transform duration-300 group-hover:scale-105 group-hover:border-indigo/50"
           >
             M<span className="text-indigo">.</span>
           </div>
           <div className="flex flex-col">
-            <span
-              className={cn(
-                "font-display text-sm font-bold tracking-tight",
-                isDarkHero ? "text-cream" : "text-ink",
-              )}
-            >
+            <span className="font-display text-sm font-bold tracking-tight text-ink">
               MD MOMIN ALI
             </span>
-            <span
-              className={cn(
-                "font-mono text-[10px] tracking-widest",
-                isDarkHero ? "text-cream/70" : "text-body",
-              )}
-            >
+            <span className="font-mono text-[10px] tracking-widest text-body">
               PORTFOLIO • EST. 2026
             </span>
           </div>
@@ -75,12 +57,7 @@ export function Navbar() {
 
         {/* Center Editorial Nav Links */}
         <div
-          className={cn(
-            "hidden items-center gap-1 rounded-full px-3 py-1.5 shadow-sm backdrop-blur-md md:flex",
-            isDarkHero
-              ? "border border-cream/20 bg-ink/60 text-cream"
-              : "border border-ink/10 bg-card/70 text-ink",
-          )}
+          className="hidden items-center gap-1 rounded-full border border-ink/10 bg-card/80 px-3 py-1.5 shadow-sm backdrop-blur-md md:flex text-ink"
         >
           {LINKS.map(({ to, label }) => {
             const active = pathname === to;
@@ -90,13 +67,9 @@ export function Navbar() {
                 to={to}
                 className={cn(
                   "relative px-4 py-1.5 font-mono text-xs font-medium tracking-wider uppercase transition-colors",
-                  isDarkHero
-                    ? active
-                      ? "text-cream font-bold"
-                      : "text-cream/70 hover:text-cream"
-                    : active
-                      ? "text-ink font-bold"
-                      : "text-body hover:text-ink",
+                  active
+                    ? "text-ink font-bold"
+                    : "text-body hover:text-ink",
                 )}
               >
                 <span>{label}</span>
@@ -104,12 +77,7 @@ export function Navbar() {
                   <motion.span
                     layoutId="nav-pill"
                     transition={{ type: "spring", stiffness: 380, damping: 28 }}
-                    className={cn(
-                      "absolute inset-0 -z-10 rounded-full border",
-                      isDarkHero
-                        ? "bg-indigo/30 border-indigo/40"
-                        : "bg-indigo/10 border-indigo/20",
-                    )}
+                    className="absolute inset-0 -z-10 rounded-full border bg-indigo/10 border-indigo/20"
                   />
                 ) : null}
               </Link>
@@ -126,12 +94,7 @@ export function Navbar() {
 
           <Link
             to="/contact"
-            className={cn(
-              "group hidden items-center gap-1.5 rounded-full px-5 py-2 font-mono text-xs font-bold tracking-wider shadow-sm transition-all duration-300 sm:inline-flex",
-              isDarkHero
-                ? "border border-cream/30 bg-cream text-ink hover:bg-indigo hover:text-cream hover:border-indigo"
-                : "border border-ink/20 bg-ink text-cream hover:border-indigo hover:bg-indigo",
-            )}
+            className="group hidden items-center gap-1.5 rounded-full border border-ink/20 bg-ink px-5 py-2 font-mono text-xs font-bold tracking-wider text-cream shadow-sm transition-all duration-300 hover:border-indigo hover:bg-indigo sm:inline-flex"
           >
             <span>LET&apos;S CONNECT</span>
             <ArrowUpRight
@@ -143,12 +106,7 @@ export function Navbar() {
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className={cn(
-              "flex size-10 items-center justify-center rounded-full p-2 shadow-sm md:hidden",
-              isDarkHero
-                ? "border border-cream/20 bg-cream/10 text-cream"
-                : "border border-ink/15 bg-card text-ink",
-            )}
+            className="flex size-10 items-center justify-center rounded-full border border-ink/15 bg-card text-ink p-2 shadow-sm md:hidden"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
           </button>

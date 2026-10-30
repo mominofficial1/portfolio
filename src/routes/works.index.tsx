@@ -1,11 +1,20 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PROJECTS, COLLECTIONS } from "@/lib/portfolio";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { ArrowLeft, ArrowUpRight, Sparkles, Filter } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+interface WorksSearch {
+  category?: string;
+}
+
 export const Route = createFileRoute("/works/")({
+  validateSearch: (search: Record<string, unknown>): WorksSearch => {
+    return {
+      category: typeof search.category === "string" ? search.category : undefined,
+    };
+  },
   head: () => ({
     meta: [
       { title: "Selected Works & Storefront Archive — MD Momin Ali" },
@@ -25,7 +34,14 @@ export const Route = createFileRoute("/works/")({
 });
 
 function WorksPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const { category: queryCategory } = Route.useSearch();
+  const [selectedCategory, setSelectedCategory] = useState<string>(queryCategory || "all");
+
+  useEffect(() => {
+    if (queryCategory) {
+      setSelectedCategory(queryCategory);
+    }
+  }, [queryCategory]);
 
   const categories = [
     { id: "all", label: "ALL PROJECTS", count: PROJECTS.length },
