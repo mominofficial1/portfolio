@@ -22,9 +22,26 @@ import {
   Star,
   Terminal,
   Zap,
+  FileText,
+  Download,
+  ChevronDown,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import { PROJECTS, REVIEWS, SERVICES, EMAIL, SOCIALS, SKILL_GROUPS, PROJECT_CATEGORIES } from "@/lib/portfolio";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  PROJECTS,
+  REVIEWS,
+  SERVICES,
+  EMAIL,
+  SOCIALS,
+  SKILL_GROUPS,
+  PROJECT_CATEGORIES,
+} from "@/lib/portfolio";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { SocialRow } from "@/components/site/Socials";
 import { Reveal, Stagger, TiltCard, Blob } from "@/components/site/motion-primitives";
@@ -42,7 +59,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "MD Momin Ali — Shopify Developer & AI Content Specialist" },
       {
         property: "og:description",
-        content: "Custom Shopify storefronts, AI content workflows, React web apps, and high-conversion systems.",
+        content:
+          "Custom Shopify storefronts, AI content workflows, React web apps, and high-conversion systems.",
       },
       { property: "og:url", content: "https://mominofficial.me" },
     ],
@@ -58,7 +76,12 @@ const CAPABILITIES = [
   { name: "UGC CONTENT", category: "creative", level: "HIGH ROAS ADS", size: "large" },
   { name: "AI WORKFLOWS", category: "fullstack", level: "AUTOMATION & AGENTS", size: "large" },
   { name: "MOTION CONTENT", category: "creative", level: "3D & AFTER EFFECTS", size: "huge" },
-  { name: "FULL STACK WEB DEVELOPMENT", category: "frontend", level: "REACT & NEXT.JS", size: "large" },
+  {
+    name: "FULL STACK WEB DEVELOPMENT",
+    category: "frontend",
+    level: "REACT & NEXT.JS",
+    size: "large",
+  },
   { name: "APP DEVELOPMENT", category: "fullstack", level: "FLUTTER & DART", size: "large" },
   { name: "SHOPIFY LIQUID", category: "shopify", level: "BESPOKE ARCHITECTURE", size: "huge" },
   { name: "REACT.JS & NEXT.JS", category: "frontend", level: "PRODUCTION SYSTEMS", size: "large" },
@@ -131,13 +154,41 @@ const CHAPTERS = [
 
 // Display categories for the homepage category-based project section
 const HOMEPAGE_CATEGORIES = [
-  { id: "web", label: "WEB PLATFORMS", subtitle: "Full-stack web applications, e-commerce systems & interactive platforms" },
-  { id: "shopify", label: "SHOPIFY STOREFRONTS", subtitle: "Bespoke Liquid themes, custom sections & high-conversion D2C stores" },
-  { id: "app", label: "MOBILE & AI APPS", subtitle: "Gemini AI integrations, Flutter apps & citizen tools" },
-  { id: "gmc", label: "GOOGLE MERCHANT & SHOPPING", subtitle: "Feed optimization, suspension recovery & shopping ads" },
-  { id: "branding", label: "CREATIVE & NASA / VIDEO", subtitle: "NASA Space Apps 2025, luxury branding & commercial video" },
-  { id: "growth", label: "GROWTH DATA & LEADS", subtitle: "B2B prospecting, data scraping & verified decision-maker pipelines" },
-  { id: "social", label: "SOCIAL MEDIA MANAGEMENT", subtitle: "YouTube channel direction, Facebook/Instagram growth & viral reach" },
+  {
+    id: "web",
+    label: "WEB PLATFORMS",
+    subtitle: "Full-stack web applications, e-commerce systems & interactive platforms",
+  },
+  {
+    id: "shopify",
+    label: "SHOPIFY STOREFRONTS",
+    subtitle: "Bespoke Liquid themes, custom sections & high-conversion D2C stores",
+  },
+  {
+    id: "app",
+    label: "MOBILE & AI APPS",
+    subtitle: "Gemini AI integrations, Flutter apps & citizen tools",
+  },
+  {
+    id: "gmc",
+    label: "GOOGLE MERCHANT & SHOPPING",
+    subtitle: "Feed optimization, suspension recovery & shopping ads",
+  },
+  {
+    id: "branding",
+    label: "CREATIVE & NASA / VIDEO",
+    subtitle: "NASA Space Apps 2025, luxury branding & commercial video",
+  },
+  {
+    id: "growth",
+    label: "GROWTH DATA & LEADS",
+    subtitle: "B2B prospecting, data scraping & verified decision-maker pipelines",
+  },
+  {
+    id: "social",
+    label: "SOCIAL MEDIA MANAGEMENT",
+    subtitle: "YouTube channel direction, Facebook/Instagram growth & viral reach",
+  },
 ];
 
 // Creative work cards with verified, direct destination links
@@ -237,9 +288,7 @@ function Home() {
           <span className="hidden sm:inline tracking-[0.2em] text-body">
             MD MOMIN ALI • PERSONAL PORTFOLIO
           </span>
-          <span className="font-semibold text-ink">
-            RAJSHAHI, BANGLADESH
-          </span>
+          <span className="font-semibold text-ink">RAJSHAHI, BANGLADESH</span>
         </div>
 
         {/* Layer 1 & 2: Massive Backdrop Typography with Overlapping PNG Portrait */}
@@ -297,12 +346,12 @@ function Home() {
               01 / CRAFT &amp; EXECUTION
             </p>
             <div className="font-monumental text-3xl leading-[0.9] text-ink sm:text-5xl lg:text-6xl">
-              IDEAS{" "}
-              <span className="font-editorial-italic text-indigo font-normal">MADE</span>{" "}
-              REAL<span className="text-emerald">.</span>
+              IDEAS <span className="font-editorial-italic text-indigo font-normal">MADE</span> REAL
+              <span className="text-emerald">.</span>
             </div>
             <p className="font-mono text-[11px] tracking-wider text-body max-w-md leading-relaxed">
-              ENGINEERING WITH RIGOR • BESPOKE SHOPIFY STOREFRONTS, AI CITIZEN PLATFORMS &amp; HIGH-CONVERSION DIGITAL ARCHITECTURE.
+              ENGINEERING WITH RIGOR • BESPOKE SHOPIFY STOREFRONTS, AI CITIZEN PLATFORMS &amp;
+              HIGH-CONVERSION DIGITAL ARCHITECTURE.
             </p>
           </motion.div>
 
@@ -318,16 +367,20 @@ function Home() {
             </p>
             <div className="space-y-1.5 text-body">
               <p>
-                <span className="text-indigo font-bold">01 /</span> 35+ PRODUCTION PROJECTS SHIPPED GLOBALLY
+                <span className="text-indigo font-bold">01 /</span> 35+ PRODUCTION PROJECTS SHIPPED
+                GLOBALLY
               </p>
               <p>
-                <span className="text-emerald font-bold">02 /</span> 2ND RUNNER UP &amp; GLOBAL NOMINEE • NASA SPACE APPS 2025
+                <span className="text-emerald font-bold">02 /</span> 2ND RUNNER UP &amp; GLOBAL
+                NOMINEE • NASA SPACE APPS 2025
               </p>
               <p>
-                <span className="text-coral font-bold">03 /</span> 100% GOOGLE MERCHANT CENTER RECOVERY &amp; ADS RECORD
+                <span className="text-coral font-bold">03 /</span> 100% GOOGLE MERCHANT CENTER
+                RECOVERY &amp; ADS RECORD
               </p>
               <p>
-                <span className="text-ink font-bold">04 /</span> FINAL-YEAR CSE • VARENDRA UNIVERSITY
+                <span className="text-ink font-bold">04 /</span> FINAL-YEAR CSE • VARENDRA
+                UNIVERSITY
               </p>
             </div>
           </motion.div>
@@ -346,7 +399,10 @@ function Home() {
               className="group inline-flex items-center gap-1.5 rounded-full border border-ink/20 bg-ink px-6 py-2.5 font-mono text-[11px] font-bold tracking-wider text-cream uppercase shadow-md transition-all hover:bg-indigo hover:border-indigo"
             >
               <span>EXPLORE SELECTED WORKS</span>
-              <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight
+                size={13}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </Link>
 
             <Link
@@ -354,16 +410,58 @@ function Home() {
               className="group inline-flex items-center gap-1.5 rounded-full border border-ink/20 bg-card px-5 py-2.5 font-mono text-[11px] font-bold tracking-wider text-ink uppercase backdrop-blur transition-all hover:border-ink hover:bg-cream"
             >
               <span>LET&apos;S CONNECT</span>
-              <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight
+                size={13}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
             </Link>
 
-            <button
-              onClick={handleCopyEmail}
-              className="group inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-card/60 px-4 py-2 font-mono text-[11px] font-bold tracking-wider text-body uppercase transition-all hover:border-emerald hover:text-emerald"
-            >
-              {copied ? <CheckCheck size={13} className="text-emerald" /> : <Copy size={13} />}
-              <span>{copied ? "EMAIL COPIED!" : "COPY EMAIL"}</span>
-            </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  type="button"
+                  aria-label="View or download CV"
+                  className="group inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-card/60 px-4 py-2 font-mono text-[11px] font-bold tracking-wider text-body uppercase transition-all hover:border-indigo hover:text-indigo focus:outline-none cursor-pointer"
+                >
+                  <FileText
+                    size={13}
+                    className="text-indigo transition-transform group-hover:scale-110"
+                  />
+                  <span>VIEW / DOWNLOAD CV</span>
+                  <ChevronDown
+                    size={11}
+                    className="text-body/60 transition-transform duration-200 group-data-[state=open]:rotate-180 group-hover:text-indigo"
+                  />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                sideOffset={8}
+                className="w-52 rounded-2xl border border-ink/10 bg-card/95 p-1.5 font-mono shadow-xl backdrop-blur-md z-50"
+              >
+                <DropdownMenuItem asChild>
+                  <a
+                    href="/Md_Momin_Ali_CV.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex cursor-pointer items-center gap-2.5 rounded-xl px-3 py-2 text-[11px] font-bold tracking-wider text-ink transition-colors hover:bg-indigo/10 hover:text-indigo focus:bg-indigo/10 focus:text-indigo"
+                  >
+                    <ExternalLink size={14} className="text-indigo shrink-0" />
+                    <span>VIEW CV (PDF)</span>
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href="/Md_Momin_Ali_CV.pdf"
+                    download="Md_Momin_Ali_CV.pdf"
+                    className="flex cursor-pointer items-center gap-2.5 rounded-xl px-3 py-2 text-[11px] font-bold tracking-wider text-ink transition-colors hover:bg-emerald/10 hover:text-emerald focus:bg-emerald/10 focus:text-emerald"
+                  >
+                    <Download size={14} className="text-emerald shrink-0" />
+                    <span>DOWNLOAD CV</span>
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           <div className="hidden items-center gap-2 tracking-widest text-body uppercase lg:flex">
@@ -384,14 +482,14 @@ function Home() {
               </p>
               <h2 className="mt-2 font-monumental text-3xl tracking-tight text-ink sm:text-4xl">
                 ENGINEERING{" "}
-                <span className="font-editorial-italic text-indigo font-normal">
-                  WITH PURPOSE.
-                </span>
+                <span className="font-editorial-italic text-indigo font-normal">WITH PURPOSE.</span>
               </h2>
             </div>
             <div className="space-y-4 font-mono text-sm leading-relaxed text-body sm:text-base">
               <p>
-                Bridging computer science rigor with high-conversion e-commerce execution. I architect bespoke Shopify Liquid storefronts, AI content workflows, and compliant Google Merchant integrations designed to drive conversions without app bloat.
+                Bridging computer science rigor with high-conversion e-commerce execution. I
+                architect bespoke Shopify Liquid storefronts, AI content workflows, and compliant
+                Google Merchant integrations designed to drive conversions without app bloat.
               </p>
               <div className="flex flex-wrap gap-3 pt-1">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-ink/15 bg-card px-3 py-1 text-xs font-semibold text-ink">
@@ -425,9 +523,7 @@ function Home() {
               </p>
               <h2 className="mt-2 font-monumental text-4xl tracking-tight text-cream sm:text-6xl">
                 <span className="text-cream font-bold">CORE</span>{" "}
-                <span className="font-editorial-italic text-cream font-normal">
-                  STACK
-                </span>
+                <span className="font-editorial-italic text-cream font-normal">STACK</span>
               </h2>
             </div>
 
@@ -542,9 +638,7 @@ function Home() {
                 <span>{isSkillPaused ? "PLAY" : "PAUSE"}</span>
               </button>
               <button
-                onClick={() =>
-                  setActiveSkillIndex((prev) => (prev + 1) % filteredSkills.length)
-                }
+                onClick={() => setActiveSkillIndex((prev) => (prev + 1) % filteredSkills.length)}
                 className="rounded-lg border border-cream/25 bg-cream/5 p-2 text-cream transition-colors hover:bg-cream/20"
                 title="Next Skill"
               >
@@ -569,9 +663,7 @@ function Home() {
       <section className="relative mx-auto max-w-7xl px-6 py-28 overflow-hidden">
         {/* Giant Architectural Watermark Typography */}
         <div className="pointer-events-none absolute inset-x-0 top-1/4 -z-10 flex justify-center opacity-[0.035] select-none">
-          <p className="font-monumental text-[20vw] leading-none text-ink">
-            SELECTED
-          </p>
+          <p className="font-monumental text-[20vw] leading-none text-ink">SELECTED</p>
         </div>
 
         {/* Section Header */}
@@ -581,16 +673,16 @@ function Home() {
               • 03 / CINEMATIC WORK REPOSITORY
             </p>
             <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl lg:text-7xl">
-              SELECTED{" "}
-              <span className="font-editorial-italic text-indigo font-normal">
-                WORKS
-              </span>
+              SELECTED <span className="font-editorial-italic text-indigo font-normal">WORKS</span>
             </h2>
           </div>
           <div className="max-w-md font-mono text-xs text-body sm:text-right">
-            <p className="font-bold text-ink">{PROJECTS.length} PRODUCTION SHIPS ACROSS 7 DISCIPLINES</p>
+            <p className="font-bold text-ink">
+              {PROJECTS.length} PRODUCTION SHIPS ACROSS 7 DISCIPLINES
+            </p>
             <p className="mt-1">
-              Curated previews in floating editorial perspective. Explore full case studies via dedicated category links.
+              Curated previews in floating editorial perspective. Explore full case studies via
+              dedicated category links.
             </p>
           </div>
         </div>
@@ -612,14 +704,13 @@ function Home() {
                 <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
                   <div>
                     <span className="font-mono text-[11px] font-bold tracking-widest text-indigo uppercase">
-                      DISCIPLINE {String(catIdx + 1).padStart(2, "0")} / {categoryProjects.length} PROJECTS
+                      DISCIPLINE {String(catIdx + 1).padStart(2, "0")} / {categoryProjects.length}{" "}
+                      PROJECTS
                     </span>
                     <h3 className="mt-1 font-monumental text-2xl tracking-tight text-ink sm:text-4xl">
                       {cat.label}
                     </h3>
-                    <p className="mt-1 font-mono text-xs text-body max-w-lg">
-                      {cat.subtitle}
-                    </p>
+                    <p className="mt-1 font-mono text-xs text-body max-w-lg">{cat.subtitle}</p>
                   </div>
 
                   {/* See More Link to /works?category={id} */}
@@ -628,8 +719,13 @@ function Home() {
                     search={{ category: cat.id }}
                     className="group inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-5 py-2 font-mono text-xs font-bold tracking-wider text-ink uppercase shadow-sm transition-all hover:bg-ink hover:text-cream"
                   >
-                    <span>SEE ALL {categoryProjects.length} {cat.label}</span>
-                    <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                    <span>
+                      SEE ALL {categoryProjects.length} {cat.label}
+                    </span>
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform group-hover:translate-x-1"
+                    />
                   </Link>
                 </div>
 
@@ -687,7 +783,8 @@ function Home() {
             EXPLORE THE FULL ARCHIVE OF 35+ SHIPS
           </h3>
           <p className="mx-auto mt-4 max-w-xl text-base text-body">
-            Browse all client storefronts, live web platforms, Google Merchant recoveries, and media campaigns with comprehensive tech stacks and case studies.
+            Browse all client storefronts, live web platforms, Google Merchant recoveries, and media
+            campaigns with comprehensive tech stacks and case studies.
           </p>
           <div className="mt-8">
             <Link
@@ -728,7 +825,9 @@ function Home() {
               <div className="absolute -inset-4 rounded-3xl bg-emerald/10 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="relative overflow-hidden rounded-2xl border-2 border-ink/20 bg-card p-3 shadow-2xl backdrop-blur-xl">
                 <div className="flex items-center justify-between border-b border-ink/15 pb-2.5 px-3 font-mono text-[11px] text-ink">
-                  <span className="font-black tracking-wider text-ink">SPOTLIGHT CASE STUDY • {spotlightProject.slug.toUpperCase()}</span>
+                  <span className="font-black tracking-wider text-ink">
+                    SPOTLIGHT CASE STUDY • {spotlightProject.slug.toUpperCase()}
+                  </span>
                   <span className="flex items-center gap-1.5 text-emerald font-black">
                     <span className="size-2 rounded-full bg-emerald animate-pulse" />
                     AWARD-WINNING / ACTIVE
@@ -769,7 +868,8 @@ function Home() {
 
               {/* Description in full contrast text-cream */}
               <p className="text-base leading-relaxed text-cream font-normal">
-                AI-powered precision agriculture and orbital telemetry platform, recognized globally as 2nd Runner Up and Global Nominee at NASA Space Apps Challenge 2025.
+                AI-powered precision agriculture and orbital telemetry platform, recognized globally
+                as 2nd Runner Up and Global Nominee at NASA Space Apps Challenge 2025.
               </p>
 
               {/* Highlights in crisp text-cream */}
@@ -824,16 +924,15 @@ function Home() {
               </div>
               <h2 className="mt-3 font-monumental text-4xl tracking-tight text-ink sm:text-6xl lg:text-7xl">
                 MORE CREATIVE{" "}
-                <span className="font-editorial-italic text-indigo font-normal">
-                  WORK
-                </span>
+                <span className="font-editorial-italic text-indigo font-normal">WORK</span>
               </h2>
             </div>
 
             <div className="max-w-md font-mono text-xs text-body sm:text-right">
               <p className="font-bold text-ink">VERIFIED CLIENT &amp; AWARD PRODUCTIONS</p>
               <p className="mt-1">
-                Explore Motion Graphics, AI Content, 3D Assets &amp; Storefronts across dedicated case studies.
+                Explore Motion Graphics, AI Content, 3D Assets &amp; Storefronts across dedicated
+                case studies.
               </p>
             </div>
           </div>
@@ -855,9 +954,7 @@ function Home() {
                   <p className="mt-1 font-mono text-[10px] tracking-widest text-body uppercase">
                     {card.tag}
                   </p>
-                  <p className="mt-3 text-xs leading-relaxed text-body">
-                    {card.desc}
-                  </p>
+                  <p className="mt-3 text-xs leading-relaxed text-body">{card.desc}</p>
                 </div>
 
                 <div className="mt-6 border-t border-ink/10 pt-4">
@@ -895,7 +992,8 @@ function Home() {
                 EXPLORE COMPLETE CASE STUDIES ON BEHANCE
               </h3>
               <p className="mt-1 text-sm text-body">
-                Discover visual identity presentations, behind-the-scenes workflows, and motion reels.
+                Discover visual identity presentations, behind-the-scenes workflows, and motion
+                reels.
               </p>
             </div>
             <a
@@ -922,9 +1020,7 @@ function Home() {
             </p>
             <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl">
               TRUSTED BY{" "}
-              <span className="font-editorial-italic text-indigo font-normal">
-                FOUNDERS
-              </span>
+              <span className="font-editorial-italic text-indigo font-normal">FOUNDERS</span>
             </h2>
           </div>
           <p className="max-w-md font-mono text-xs text-body sm:text-right">
@@ -950,15 +1046,11 @@ function Home() {
               </div>
 
               <div className="mt-6 border-t border-ink/10 pt-4">
-                <p className="font-display text-base font-bold text-ink">
-                  {review.author}
-                </p>
+                <p className="font-display text-base font-bold text-ink">{review.author}</p>
                 <p className="font-mono text-xs text-indigo">
                   {review.role} • {review.company}
                 </p>
-                <p className="mt-1 font-mono text-[10px] text-body">
-                  Project: {review.project}
-                </p>
+                <p className="mt-1 font-mono text-[10px] text-body">Project: {review.project}</p>
               </div>
             </div>
           ))}
@@ -975,14 +1067,12 @@ function Home() {
               • 06 / PROFESSIONAL CHAPTERS &amp; FOCUS
             </p>
             <h2 className="mt-2 font-monumental text-4xl tracking-tight text-ink sm:text-6xl">
-              CORE{" "}
-              <span className="font-editorial-italic text-indigo font-normal">
-                CHAPTERS
-              </span>
+              CORE <span className="font-editorial-italic text-indigo font-normal">CHAPTERS</span>
             </h2>
           </div>
           <p className="max-w-md font-mono text-xs text-body sm:text-right">
-            Three dedicated specializations: Shopify &amp; GMC, AI Content &amp; Motion, and Full Stack Web &amp; App Development.
+            Three dedicated specializations: Shopify &amp; GMC, AI Content &amp; Motion, and Full
+            Stack Web &amp; App Development.
           </p>
         </div>
 
@@ -1003,15 +1093,15 @@ function Home() {
                   )}
                 >
                   <div className="flex w-full items-center justify-between font-mono text-[11px]">
-                    <span className="font-bold text-indigo">{chap.id} / {chap.tag}</span>
+                    <span className="font-bold text-indigo">
+                      {chap.id} / {chap.tag}
+                    </span>
                     <span className="text-body">{chap.period}</span>
                   </div>
                   <h3 className="mt-2 font-monumental text-2xl tracking-tight text-ink sm:text-3xl">
                     {chap.title}
                   </h3>
-                  <p className="font-editorial-italic text-sm text-body">
-                    {chap.role}
-                  </p>
+                  <p className="font-editorial-italic text-sm text-body">{chap.role}</p>
                 </button>
               );
             })}
@@ -1078,14 +1168,18 @@ function Home() {
                 • 07 / GOT AN AMBITIOUS PROJECT IN MIND?
               </p>
 
-              <div className="font-monumental leading-[0.88] text-cream" style={{ fontSize: "clamp(3.8rem, 10vw, 9rem)" }}>
+              <div
+                className="font-monumental leading-[0.88] text-cream"
+                style={{ fontSize: "clamp(3.8rem, 10vw, 9rem)" }}
+              >
                 LET&apos;S <br />
                 <span className="font-editorial-italic font-normal text-cream">make it</span> <br />
                 REAL<span className="text-emerald">.</span>
               </div>
 
               <p className="max-w-xl text-base leading-relaxed text-cream/90 font-medium sm:text-lg">
-                Available for custom Shopify storefronts, AI content workflows, and full-stack web applications built to scale.
+                Available for custom Shopify storefronts, AI content workflows, and full-stack web
+                applications built to scale.
               </p>
 
               <div className="pt-4 flex flex-wrap gap-4">
@@ -1094,7 +1188,10 @@ function Home() {
                   className="group inline-flex items-center gap-3 rounded-full bg-cream px-8 py-4 font-mono text-sm font-bold tracking-wider text-ink uppercase shadow-2xl transition-all hover:scale-105 hover:bg-cream/90"
                 >
                   <span>LET&apos;S TALK / CONTACT</span>
-                  <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  <ArrowUpRight
+                    size={16}
+                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
                 </Link>
 
                 <a
@@ -1122,9 +1219,7 @@ function Home() {
                 </p>
                 <h3 className="font-monumental text-3xl tracking-tight text-cream sm:text-4xl">
                   <span className="text-cream font-bold">CONNECT</span>{" "}
-                  <span className="font-editorial-italic text-cream font-normal">
-                    directly.
-                  </span>
+                  <span className="font-editorial-italic text-cream font-normal">directly.</span>
                 </h3>
                 <p className="mt-2 text-sm text-cream/80">
                   Business enquiries, collaborations, or Shopify store consultations.
@@ -1145,7 +1240,11 @@ function Home() {
                       onClick={handleCopyEmail}
                       className="ml-3 inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-cream/30 bg-cream/15 px-3 py-1.5 text-[10px] text-cream transition-colors hover:bg-cream/25"
                     >
-                      {copied ? <CheckCheck size={12} className="text-emerald" /> : <Copy size={12} />}
+                      {copied ? (
+                        <CheckCheck size={12} className="text-emerald" />
+                      ) : (
+                        <Copy size={12} />
+                      )}
                       <span>{copied ? "COPIED" : "COPY"}</span>
                     </button>
                   </div>
