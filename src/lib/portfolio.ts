@@ -11,7 +11,7 @@ export const SOCIALS = {
   whatsapp: "https://wa.me/8801792872188",
 };
 
-export type ProjectCategory = "app" | "shopify" | "web" | "gmc" | "branding" | "growth" | "social";
+export type ProjectCategory = "web" | "shopify" | "app" | "gmc" | "branding" | "growth" | "social";
 
 export type Project = {
   slug: string;
@@ -35,16 +35,25 @@ export type Project = {
   highlights?: string[];
   deliverables?: string[];
   problem?: string;
+  goals?: string;
   strategy?: string;
+  designUx?: string;
+  memberWorkflow?: string;
+  adminWorkflow?: string;
+  backendDetails?: string;
+  paymentWorkflow?: string;
+  process?: string;
+  challenges?: string;
   result?: string;
+  value?: string;
   featured?: boolean;
 };
 
 export const PROJECT_CATEGORIES: { id: string; label: string }[] = [
   { id: "all", label: "ALL PROJECTS" },
-  { id: "app", label: "MOBILE & AI APPS" },
-  { id: "shopify", label: "SHOPIFY STOREFRONTS" },
   { id: "web", label: "WEB PLATFORMS" },
+  { id: "shopify", label: "SHOPIFY STOREFRONTS" },
+  { id: "app", label: "MOBILE & AI APPS" },
   { id: "gmc", label: "GOOGLE MERCHANT & SHOPPING" },
   { id: "branding", label: "CREATIVE & VIDEO / NASA" },
   { id: "growth", label: "GROWTH DATA & LEADS" },
@@ -326,9 +335,9 @@ export const SKILL_GROUPS = [
 ];
 
 export const COLLECTIONS = [
+  { slug: "web", name: "Web Platforms", count: 11 },
   { slug: "shopify", name: "Shopify Storefronts", count: 8 },
   { slug: "app", name: "Mobile & AI Applications", count: 2 },
-  { slug: "web", name: "Web Platforms", count: 9 },
   { slug: "gmc", name: "Google Merchant Center", count: 5 },
   { slug: "branding", name: "Creative & NASA Space Apps", count: 3 },
   { slug: "growth", name: "Growth & B2B Leads", count: 1 },
@@ -336,6 +345,123 @@ export const COLLECTIONS = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    "slug": "roylux-ecommerce",
+    "title": "ROYLUX — PREMIUM E-COMMERCE WEBSITE",
+    "tag": "PREMIUM FASHION E-COMMERCE STOREFRONT & ORDER SYSTEM",
+    "description": "RoyLux is a modern, premium fashion e-commerce website focused on providing customers with a smooth and elegant online shopping experience. The website allows customers to explore fashion products, browse collections, view product details, and purchase products through a convenient checkout process.",
+    "link": "https://roylux-ecommerce.vercel.app/",
+    "githubUrl": "https://github.com/mominofficial1/roylux-ecommerce",
+    "status": "LIVE / ACTIVE",
+    "statusTone": "live",
+    "accent": "indigo",
+    "category": "web",
+    "categoryLabel": "Web • E-Commerce Platform",
+    "image": "/roylux-showcase.jpg",
+    "year": "2025–2026",
+    "role": "Lead Full-Stack Web Developer & UI/UX Designer",
+    "overview": "RoyLux is a modern, premium fashion e-commerce website engineered for luxury streetwear and winter essentials. Built with Next.js 16 App Router, React 19, TypeScript, and Firebase, RoyLux delivers an elegant shopping experience featuring curated product listings, interactive cart drawer, zone-based delivery fee calculations (Dhaka vs. Outside Dhaka), Cash on Delivery (COD) and online payment options, order placement management, and automated jsPDF invoice generation.",
+    "stack": [
+      "Next.js 16 (App Router)",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Firebase (Firestore & Storage)",
+      "Lucide React",
+      "jsPDF Invoice Engine",
+      "Canvas Confetti",
+      "Vercel Edge Platform"
+    ],
+    "highlights": [
+      "Modern and premium e-commerce interface with an editorial winter fashion aesthetic",
+      "Curated product listing and detailed product showcase pages (heavyweight fleece hoodies & varsity sweatshirts)",
+      "Dynamic product browsing and shopping experience with collection and category filtering",
+      "Interactive shopping cart drawer with real-time item counter, incrementation, and subtotal calculation",
+      "Comprehensive customer information and streamlined multi-step checkout workflow",
+      "Flexible payment methods: Cash on Delivery (COD) and Online Payment confirmation",
+      "Automated order placement, customer details recording, and order tracking",
+      "Downloadable branded PDF order receipts generated client-side via jsPDF engine",
+      "Fully responsive layout optimized for desktop viewports, tablets, and mobile devices",
+      "High performance sub-second page transitions powered by Next.js Turbopack"
+    ],
+    "deliverables": [
+      "Production Next.js 16 & React 19 E-Commerce Application",
+      "Firebase Firestore Order Management & Customer Database",
+      "Responsive Fashion Lookbook & Product Detail Layouts",
+      "Reactive Cart Drawer & Live Order Calculation Engine",
+      "Regional Delivery Zone Checkout (Dhaka vs Outside Dhaka)",
+      "Automated jsPDF Printable Order Invoice Generator",
+      "Vercel Production Deployment & DNS Optimization"
+    ],
+    "problem": "Fashion consumers in the lifestyle and streetwear sector expect an editorial, brand-first shopping aesthetic paired with lightning-fast navigation. Conventional e-commerce templates often suffer from visual bloat, slow page load speeds, and rigid checkout workflows that fail to handle localized payment preferences such as Cash on Delivery (COD) alongside automated receipt generation.",
+    "goals": "Deliver a luxury digital storefront for RoyLux winter apparel; implement an intuitive cart drawer with real-time pricing; streamline customer checkout with dynamic regional shipping logic; provide Cash on Delivery and online payment readiness; and guarantee smooth responsive performance across all screen sizes.",
+    "strategy": "Architected a custom full-stack web application using Next.js 16 App Router, React 19, and Tailwind CSS v4. Developed a component-driven structure decoupling product catalog browsing, reactive client-side cart persistence, and a multi-step checkout funnel with automated delivery fee calculations. Integrated Firebase Firestore for order capture and jsPDF for instant client-side receipt compilation.",
+    "designUx": "Designed with a warm minimal editorial palette (#fbfaf8 background, deep #121212 typography, and subtle gold accents). Utilized high-contrast lifestyle photography, generous whitespace, smooth hover zoom interactions, and mobile-first thumb ergonomics for effortless one-handed shopping.",
+    "process": "Initiated with brand lookbook wireframing and design token specification in Tailwind CSS v4. Developed reusable modular components for product grids, modal previews, and cart drawers. Implemented delivery zone fee calculation rules, connected Firebase for persistent order records, integrated jsPDF invoice downloads, and deployed to Vercel with edge caching.",
+    "challenges": "Handling dynamic delivery fee updates between Dhaka City and Outside Dhaka without jarring layout shifts or network delay. Solved by implementing client-side reactive address parsing that recalculates shipping thresholds and grand totals in real time before submitting the order payload to Firebase.",
+    "result": "Live in production on Vercel (https://roylux-ecommerce.vercel.app/) with sub-second page load times, zero layout shift, seamless mobile cart interactions, and a conversion-oriented checkout experience supporting Cash on Delivery.",
+    "featured": true
+  },
+  {
+    "slug": "safdarabad-gym-khana",
+    "title": "SAFDARABAD GYM KHAN'A — FULL-STACK GYM MANAGEMENT WEBSITE",
+    "tag": "FULL-STACK GYM MANAGEMENT SYSTEM & MEMBER PORTAL",
+    "description": "Safdarabad Gym Khan'a is a full-stack gym management website designed to simplify gym membership registration, member account management, recurring payments, and administrative operations. Unlike a simple gym landing page, this project includes a management workflow where members can register, access their accounts, manage their membership, and handle regular payments.",
+    "link": "http://sfdgymkhana.com/",
+    "status": "LIVE / ACTIVE",
+    "statusTone": "live",
+    "accent": "emerald",
+    "category": "web",
+    "categoryLabel": "Web • Full-Stack Management System",
+    "image": "/safdarabad-gym-showcase.jpg",
+    "year": "2025–2026",
+    "role": "Full-Stack Web Architect & Systems Engineer",
+    "overview": "Safdarabad Gym Khan'a is a full-stack gym management website and administrative system engineered for premier strength and fitness operations at Fatima Center, Top Floor, Main Bazar. Going far beyond a standard gym landing page, the platform provides an end-to-end management workflow: online membership registration, member account creation and login, active membership monitoring (Standard Rs 2,500/mo), recurring payment tracking, and a centralized administrative dashboard for database member record management, payment approvals, and financial CSV reporting.",
+    "stack": [
+      "Full-Stack Web Architecture",
+      "React.js & Modern JavaScript",
+      "Node.js / Express API Services",
+      "Database Records & Member Storage",
+      "Tailwind CSS & Moody Amber Theme",
+      "Member Authentication & Session Security",
+      "Payment & Receipt Generator (PAY/RCP)",
+      "Financial CSV Export Engine"
+    ],
+    "highlights": [
+      "Public gym showcase with facility highlights, strength equipment, and membership plans (Standard Rs 2,500/mo)",
+      "Online membership admission and digital registration workflow for prospective gym members",
+      "Member account creation with secure login credentials and authenticated member portal access",
+      "Personalized member dashboard displaying membership status, expiration dates, and payment history",
+      "Regular membership payment process with transaction tracking and receipt numbering (e.g. RCP-2026 series)",
+      "Centralized admin management system providing complete administrative oversight over club operations",
+      "Database-backed member records management with instant search, profile inspection, and record updates",
+      "Administrative payment review workflow to monitor, verify, and approve/reject member payment submissions",
+      "Status tracking to clearly distinguish between completed, pending, and overdue membership dues",
+      "Financial audit reporting with automated CSV export capabilities (safdarbad-gym-financial-report)"
+    ],
+    "deliverables": [
+      "Full-Stack Gym Management Web Platform",
+      "Member Registration & Authentication Gateway",
+      "Authenticated Member Portal & Payment History",
+      "Centralized Administrative Control Panel",
+      "Database Member Directory & Record Administration",
+      "Sequential Receipt Generation (PAY / RCP-2026 series)",
+      "Financial Auditing & CSV Report Exporter",
+      "Responsive Dark & Amber Industrial UI"
+    ],
+    "problem": "Local athletic clubs and strength facilities frequently struggle with disorganized paper registers, missing cash receipts, and unrecorded monthly gym dues. Gym members lack a reliable way to check their active membership duration or past payments, while administrators face significant friction monitoring who has paid, who is pending, and reconciling monthly revenue.",
+    "goals": "Build a comprehensive full-stack gym management website that replaces paper logs with a reliable database system; provide an online admission and member portal; automate recurring payment logging with unique receipt numbers; and deliver an administrative dashboard for real-time member monitoring and financial export.",
+    "strategy": "Engineered a dual-portal full-stack application. On the member side, built a high-impact, athletic dark-themed interface with online registration and authenticated account access for tracking membership plans and payments. On the admin side, constructed a centralized management dashboard connected to a persistent database to view all registered members, review payment submissions, update records, and generate financial reports.",
+    "memberWorkflow": "Athletes discover membership tiers (Standard Membership Rs 2,500/mo) and submit an online registration form. Upon registration, an account is provisioned allowing members to log in, view current membership status, see remaining days, and track payment receipts.",
+    "adminWorkflow": "Gym administrators access a secure centralized dashboard to view all members registered in the database, inspect member contact info and registration dates, monitor payment statuses, approve or reject payment records, and maintain accurate operational records.",
+    "backendDetails": "Powered by a robust backend and database schema structuring member profiles, membership plan terms, and sequential payment ledgers (PAY-501, PAY-93741, RCP-2026-001, RCP-2026-002) with audit timestamps and administrator attribution.",
+    "paymentWorkflow": "Supports recurring membership dues tracking. Payments are recorded with date, method (Cash/Online), amount received, and recording administrator. Transactions are assigned sequential receipt identifiers and can be exported as structured CSV financial reports.",
+    "designUx": "Crafted with an energetic, moody industrial gym aesthetic featuring deep dark slate surfaces, glowing neon amber accents, bold athletic typography ('BUILD YOUR STRENGTH. TRANSFORM YOURSELF.'), and direct WhatsApp contact integration (+92 305 9422466).",
+    "process": "Conducted operational analysis of fitness club admissions and payment collection routines; modeled the database schema for members and financial transactions; implemented responsive front-end views for members and administrators; integrated payment reconciliation logic; and built automated CSV export tools.",
+    "challenges": "Bridging offline cash-based gym fee collections with an accurate digital ledger. Resolved by designing an administrator recording workflow that tags cash transactions with verified receipt codes (RCP-2026), immediately reflecting paid status on the member's account.",
+    "result": "A full-featured gym management platform deployed at http://sfdgymkhana.com/ that eliminates paper bookkeeping, streamlines member registrations, ensures payment transparency, and gives administrators complete operational control.",
+    "featured": true
+  },
   {
     "slug": "terra-farm-nasa",
     "title": "TERRA FARM — NASA SPACE APPS CHALLENGE 2025",

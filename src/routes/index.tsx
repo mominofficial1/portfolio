@@ -131,9 +131,9 @@ const CHAPTERS = [
 
 // Display categories for the homepage category-based project section
 const HOMEPAGE_CATEGORIES = [
+  { id: "web", label: "WEB PLATFORMS", subtitle: "Full-stack web applications, e-commerce systems & interactive platforms" },
   { id: "shopify", label: "SHOPIFY STOREFRONTS", subtitle: "Bespoke Liquid themes, custom sections & high-conversion D2C stores" },
   { id: "app", label: "MOBILE & AI APPS", subtitle: "Gemini AI integrations, Flutter apps & citizen tools" },
-  { id: "web", label: "WEB PLATFORMS", subtitle: "Full-stack React, Next.js portals & web applications" },
   { id: "gmc", label: "GOOGLE MERCHANT & SHOPPING", subtitle: "Feed optimization, suspension recovery & shopping ads" },
   { id: "branding", label: "CREATIVE & NASA / VIDEO", subtitle: "NASA Space Apps 2025, luxury branding & commercial video" },
   { id: "growth", label: "GROWTH DATA & LEADS", subtitle: "B2B prospecting, data scraping & verified decision-maker pipelines" },

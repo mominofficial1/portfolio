@@ -250,13 +250,101 @@ function ProjectDetail() {
               </div>
             )}
 
-            {project.strategy && (
+            {project.goals && (
               <div className="rounded-2xl border border-indigo/20 bg-indigo/5 p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+                  PROJECT GOALS &amp; OBJECTIVES
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.goals}
+                </p>
+              </div>
+            )}
+
+            {project.strategy && (
+              <div className="rounded-2xl border border-indigo/20 bg-card p-6 shadow-sm">
                 <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
                   STRATEGY &amp; IMPLEMENTATION
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
                   {project.strategy}
+                </p>
+              </div>
+            )}
+
+            {project.memberWorkflow && (
+              <div className="rounded-2xl border border-emerald/20 bg-emerald/5 p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-emerald uppercase">
+                  MEMBER MANAGEMENT WORKFLOW
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.memberWorkflow}
+                </p>
+              </div>
+            )}
+
+            {project.adminWorkflow && (
+              <div className="rounded-2xl border border-indigo/20 bg-indigo/5 p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+                  ADMIN DASHBOARD &amp; MANAGEMENT
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.adminWorkflow}
+                </p>
+              </div>
+            )}
+
+            {project.backendDetails && (
+              <div className="rounded-2xl border border-ink/10 bg-card p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+                  DATABASE &amp; BACKEND FUNCTIONALITY
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.backendDetails}
+                </p>
+              </div>
+            )}
+
+            {project.paymentWorkflow && (
+              <div className="rounded-2xl border border-coral/20 bg-coral/5 p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-coral uppercase">
+                  PAYMENT MANAGEMENT WORKFLOW
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.paymentWorkflow}
+                </p>
+              </div>
+            )}
+
+            {project.designUx && (
+              <div className="rounded-2xl border border-ink/10 bg-card p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+                  DESIGN &amp; USER EXPERIENCE
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.designUx}
+                </p>
+              </div>
+            )}
+
+            {project.process && (
+              <div className="rounded-2xl border border-ink/10 bg-card p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-indigo uppercase">
+                  DEVELOPMENT PROCESS
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.process}
+                </p>
+              </div>
+            )}
+
+            {project.challenges && (
+              <div className="rounded-2xl border border-coral/20 bg-card p-6 shadow-sm">
+                <p className="font-mono text-xs font-bold tracking-widest text-coral uppercase">
+                  CHALLENGES &amp; SOLUTIONS
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-body sm:text-base">
+                  {project.challenges}
                 </p>
               </div>
             )}
@@ -277,7 +365,8 @@ function ProjectDetail() {
                 COMMERCIAL VALUE DELIVERED
               </p>
               <p className="mt-2 text-sm leading-relaxed text-body">
-                Engineered with high performance metrics, zero-dependency Liquid sections, mobile-first checkout ergonomics, and high conversion copy.
+                {project.value ??
+                  "Engineered with high performance metrics, zero-dependency Liquid sections, mobile-first checkout ergonomics, and high conversion copy."}
               </p>
             </div>
           </div>
